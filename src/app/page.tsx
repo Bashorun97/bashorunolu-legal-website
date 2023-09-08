@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/image";
 
 import Heading from "./heading";
 import Mission from "./mission";
+import Services from "./services";
 
 
 export default function Home() {
@@ -10,6 +10,7 @@ export default function Home() {
     <div>
       <Heading />
       <Mission />
+      <Services />
       { /*
       <div>Revise and Review</div>
       <div>FAQ</div>
