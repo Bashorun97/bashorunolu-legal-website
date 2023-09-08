@@ -11,7 +11,7 @@ const mullish = Mulish({subsets: ["latin"]});
 
 const Heading = (): JSX.Element => {
   return (
-    <div className="flex flex-col text-white pt-2 px-16 gap-4" style={{backgroundColor: "#454655E5"}}>
+    <div className="flex flex-col text-white pt-2 px-16 gap-4 bg-nude">
       <div className="flex py-2 justify-center items-center">
         <Image src={Logo} alt="Logo" height={65} width={65} />
 
