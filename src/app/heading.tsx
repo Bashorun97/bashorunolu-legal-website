@@ -5,13 +5,18 @@ import {Caveat, Mulish} from "next/font/google";
 
 import Logo from "../assets/logo.png";
 import HeroPicture from "../assets/hero-image.png";
+import HeroBackground from "../assets/hero-background.png";
 
 const caveat = Caveat({subsets: ["latin"]});
 const mullish = Mulish({subsets: ["latin"]});
 
 const Heading = (): JSX.Element => {
   return (
-    <div className="flex flex-col text-white pt-2 px-16 gap-4 bg-nude">
+    <div className="flex flex-col text-white pt-2 px-16 gap-4 bg-nude" style={{
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${HeroBackground.src})`,
+    }}>
       <div className="flex py-2 justify-center items-center">
         <Image src={Logo} alt="Logo" height={65} width={65} />
 
