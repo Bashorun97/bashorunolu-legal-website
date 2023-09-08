@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import FAQ from "./faq";
 import Heading from "./heading";
 import Mission from "./mission";
 import Services from "./services";
