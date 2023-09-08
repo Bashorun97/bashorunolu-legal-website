@@ -1,14 +1,15 @@
 import React from "react";
+import Image from "next/image";
 
 import Heading from "./heading";
-
+import Mission from "./mission";
 
 
 export default function Home() {
   return (
     <div>
       <Heading />
-      <div>Mission</div>
+      <Mission />
       { /*
       <div>Revise and Review</div>
       <div>FAQ</div>
