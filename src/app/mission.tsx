@@ -10,7 +10,7 @@ const Mission = () => {
         <Image className="grayscale" src={MissionPose} alt="Mission Pose" />
       </div>
       <div className="w-1/2 flex flex-col gap-2 justify-center">
-        <h6 className="text-secondary font-semibold text-md">My Mission</h6>
+        <h6 className="text-secondary font-semibold text-md">Our Mission</h6>
         <h3 className="font-extrabold text-4xl w-4/5 text-nude">Commited to Excellence and Innovation</h3>
         <p className="text-3xl w-4/5 text-backgroundBlack">
           An esteemed law firm characterised by its exceptional intellectual prowess and innovative approach,

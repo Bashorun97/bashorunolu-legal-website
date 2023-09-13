@@ -64,7 +64,7 @@ const ReviseAndReview = (): JSX.Element => {
         </div>
 
         <div className="text-white text-lg">
-          With my expertise, you can proceed with confidence,
+          With our expertise, you can proceed with confidence,
           knowing that your documents are legally sound and error-free.
         </div>
 

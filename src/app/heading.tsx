@@ -85,14 +85,14 @@ const Heading = (): JSX.Element => {
       <div className="flex flex-grow">
         <div className="flex flex-col w-1/2 gap-6 justify-center">
           <div>
-            <h6 className={caveat.className + " " + "text-primary"} style={{fontSize: "64px", transform: "rotate(-7.96deg)", lineHeight: "50px", width: "max-content", marginBottom: "-15px", marginLeft: "0"}}>I am</h6>
+            <h6 className={caveat.className + " " + "text-primary"} style={{fontSize: "64px", transform: "rotate(-7.96deg)", lineHeight: "50px", width: "max-content", marginBottom: "-15px", marginLeft: "0"}}>We are</h6>
             <p className={mullish.className + " " + "text-6xl font-extrabold"}>
               Your <span className="text-secondary">Trusted</span> Legal Partner in Lagos
             </p>
           </div>
 
           <p>
-            I am dedicated to simplifying legal complexities.
+            We are dedicated to simplifying legal complexities.
             Our team of experts is here to guide you through every step,
             providing efficient and cost-effective solutions to your legal needs.
           </p>

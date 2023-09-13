@@ -22,7 +22,7 @@ const Card = ({title, backgroundImage, description}: CardProps): JSX.Element => 
       backgroundPosition: "250% 0px",
     }}>
       <div className="flex flex-col leading-4">
-        <p className="text-secondary text-md font-semibold">I am an expert at</p>
+        <p className="text-secondary text-md font-semibold">We are experts at</p>
         <p className="text-backgroundBlack font-bold text-2xl">{title}</p>
       </div>
       <ul className="list-disc list-inside">
