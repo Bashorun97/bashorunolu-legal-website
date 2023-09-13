@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 
 import {Caveat, Mulish} from "next/font/google";
 
@@ -7,10 +7,40 @@ import Logo from "../assets/logo.png";
 import HeroPicture from "../assets/hero-image.png";
 import HeroBackground from "../assets/hero-background.png";
 
+import SoLaw from "../assets/so-law.png";
+import SoStore from "../assets/so-store.png";
+import SoFamily from "../assets/so-family.png";
+import SoImage from "../assets/so-company.png";
+
 const caveat = Caveat({subsets: ["latin"]});
 const mullish = Mulish({subsets: ["latin"]});
 
+interface CardProps {
+  description: string;
+  backgroundImage: StaticImageData;
+}
+const Card = ({backgroundImage, description}: CardProps): JSX.Element => {
+  return (
+    <div className="rounded-lg py-3 px-2 cursor-pointer" style={{
+      background: `#4546551f url(${backgroundImage.src})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "100% 0px",
+      backgroundSize: "125px",
+    }}>
+      <h2 className="text-secondary text-lg font-semibold">We are experts at</h2>
+      <p className="text-backgroundBlack font-extrabold text-xl">{description}</p>
+    </div>
+  );
+}
+
 const Heading = (): JSX.Element => {
+
+  const [showServices, setShowServices] = React.useState<boolean>(false);
+
+  const toogleShowServices = () => {
+    setShowServices(!showServices);
+  };
+
   return (
     <div className="flex flex-col text-white pt-2 px-16 gap-4 bg-nude" style={{
       backgroundSize: "cover",
@@ -20,14 +50,36 @@ const Heading = (): JSX.Element => {
       <div className="flex py-2 justify-center items-center">
         <Image src={Logo} alt="Logo" height={65} width={65} />
 
-        <div className="flex flex-grow justify-center content-center gap-4">
+        <div className="flex flex-grow justify-center content-center gap-8">
           <NavButton active>Home</NavButton>
-          <NavButton><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
+
+          <div className="relative">
+            <NavButton onClick={toogleShowServices}><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
+            {showServices && (
+              <div className="absolute p-2 grid grid-cols-2 gap-3 top-8 -left-60 rounded-lg bg-backgroundWhite" style={{width: "37rem"}}>
+                <Card
+                  backgroundImage={SoImage}
+                  description="Property Law Practice (Conveyance Practice)"
+                />
+                <Card
+                  backgroundImage={SoLaw}
+                  description="Corporate Law Practice"
+                />
+                <Card
+                  backgroundImage={SoStore}
+                  description="Commercial and Contractual Law"
+                />
+                <Card
+                  backgroundImage={SoFamily}
+                  description="Family Law"
+                />
+              </div>
+            )}
+          </div>
           <NavButton>Contact me</NavButton>
-          <NavButton>Payments</NavButton>
         </div>
 
-        <div>call: <span className="text-lg">(234) 01234567890</span></div>
+        <div>call: <span className="text-lg font-bold">(234) 01234567890</span></div>
       </div>
 
       <div className="flex flex-grow">
@@ -59,12 +111,13 @@ const Heading = (): JSX.Element => {
 
 interface NavButtonProps {
   active?: boolean;
+  onClick?: () => void;
   children?: React.ReactNode;
 }
 
-const NavButton = ({active = false, children}: NavButtonProps): JSX.Element => {
+const NavButton = ({active = false, onClick, children}: NavButtonProps): JSX.Element => {
   return (
-    <button className={`${active ? "text-primary" : ""}`}>{children}</button>
+    <button onClick={onClick} className={`${active ? "text-primary" : ""}`}>{children}</button>
   );
 };
 
