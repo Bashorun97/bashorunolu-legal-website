@@ -35,6 +35,7 @@ const Card = ({backgroundImage, description}: CardProps): JSX.Element => {
 
 const Heading = (): JSX.Element => {
 
+  const [shouldShow, setShouldShow] = React.useState<boolean>(false);
   const [showServices, setShowServices] = React.useState<boolean>(false);
 
   const toogleShowServices = () => {
@@ -42,51 +43,57 @@ const Heading = (): JSX.Element => {
   };
 
   return (
-    <div className="flex flex-col text-white pt-2 px-16 gap-4 bg-nude" style={{
-      backgroundSize: "cover",
-      backgroundPosition: "center",
+    <div className="flex flex-col bg-cover bg-center text-white pt-2 pb-4 sm:pb-0 px-2 md:px-16 gap-4 sm:gap-2 bg-nude" style={{
       background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${HeroBackground.src})`,
     }}>
-      <div className="flex py-2 justify-center items-center">
+
+      <div className="flex py-2 w-full justify-between items-center">
         <Image src={Logo} alt="Logo" height={65} width={65} />
 
-        <div className="flex flex-grow justify-center content-center gap-8">
-          <NavButton active>Home</NavButton>
+        <button className="border border-gray-300 px-3 py-3">Hello</button>
 
-          <div className="relative">
-            <NavButton onClick={toogleShowServices}><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
-            {showServices && (
-              <div className="absolute p-2 grid grid-cols-2 gap-3 top-8 -left-60 rounded-lg bg-backgroundWhite" style={{width: "37rem"}}>
-                <Card
-                  backgroundImage={SoImage}
-                  description="Property Law Practice (Conveyance Practice)"
-                />
-                <Card
-                  backgroundImage={SoLaw}
-                  description="Corporate Law Practice"
-                />
-                <Card
-                  backgroundImage={SoStore}
-                  description="Commercial and Contractual Law"
-                />
-                <Card
-                  backgroundImage={SoFamily}
-                  description="Family Law"
-                />
-              </div>
-            )}
+        {shouldShow && (
+          <div className="flex flex-grow justify-center content-center gap-8">
+            <NavButton active>Home</NavButton>
+
+            <div className="relative">
+              <NavButton onClick={toogleShowServices}><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
+              {/** TODO: Make this show **/}
+              {showServices && (
+                <div className="absolute p-2 grid grid-cols-2 gap-3 top-8 -left-60 rounded-lg bg-backgroundWhite" style={{width: "37rem"}}>
+                  <Card
+                    backgroundImage={SoImage}
+                    description="Property Law Practice (Conveyance Practice)"
+                  />
+                  <Card
+                    backgroundImage={SoLaw}
+                    description="Corporate Law Practice"
+                  />
+                  <Card
+                    backgroundImage={SoStore}
+                    description="Commercial and Contractual Law"
+                  />
+                  <Card
+                    backgroundImage={SoFamily}
+                    description="Family Law"
+                  />
+                </div>
+              )}
+            </div>
+            <NavButton>Contact me</NavButton>
           </div>
-          <NavButton>Contact me</NavButton>
-        </div>
+        )}
 
-        <div>call: <span className="text-lg font-bold">(234) 01234567890</span></div>
+        {shouldShow && (
+          <div>call: <span className="text-lg font-bold">(234) 01234567890</span></div>
+        )}
       </div>
 
       <div className="flex flex-grow">
-        <div className="flex flex-col w-1/2 gap-6 justify-center">
+        <div className="flex flex-col md:w-1/2 gap-6 justify-center">
           <div>
-            <h6 className={caveat.className + " " + "text-primary"} style={{fontSize: "64px", transform: "rotate(-7.96deg)", lineHeight: "50px", width: "max-content", marginBottom: "-15px", marginLeft: "0"}}>We are</h6>
-            <p className={mullish.className + " " + "text-6xl font-extrabold"}>
+            <h6 className={caveat.className + " " + "text-6xl text-primary"} style={{transform: "rotate(-7.96deg)", lineHeight: "50px", width: "max-content", marginBottom: "-15px"}}>We are</h6>
+            <p className={mullish.className + " " + "text-5xl sm:text-6xl font-extrabold"}>
               Your <span className="text-secondary">Trusted</span> Legal Partner in Lagos
             </p>
           </div>
@@ -100,9 +107,11 @@ const Heading = (): JSX.Element => {
           <button className="bg-white text-black w-fit px-8 py-3 rounded-md">Contact me</button>
         </div>
 
+        {/** TODO: Make this show
         <div className="flex w-1/2 justify-end">
           <Image priority src={HeroPicture} alt="Hero picture" height={500} width={470} />
         </div>
+        */}
 
       </div>
     </div>

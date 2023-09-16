@@ -57,13 +57,13 @@ const ReviseAndReview = (): JSX.Element => {
       backgroundRepeat: "no-repeat",
       backgroundImage: `url(${ReviseAndReviewHeroImage.src})`,
     }}>
-      <div className="inset-0 flex flex-col gap-4 w-7/12 px-16 py-24">
-        <div className="flex flex-col leading-1">
+      <div className="inset-0 flex flex-col gap-4 sm:w-7/12 px-2 sm:px-16 py-8 sm:py-24">
+        <div className="flex flex-col leading-1 text-center sm:text-left">
           <p className="text-secondary text-xl font-semibold">Revise and Review</p>
-          <p className="text-primary text-4xl font-extrabold">Unparalleled Expertise in Document Revision and Review</p>
+          <p className="text-primary text-3xl sm:text-4xl font-extrabold">Unparalleled Expertise in Document Revision and Review</p>
         </div>
 
-        <div className="text-white text-lg">
+        <div className="text-white text-xl sm:text-lg text-center sm:text-left">
           With our expertise, you can proceed with confidence,
           knowing that your documents are legally sound and error-free.
         </div>

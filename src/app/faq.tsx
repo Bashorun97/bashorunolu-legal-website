@@ -42,7 +42,7 @@ const Accordion = ({open = false, title, body}: AccordionProps): JSX.Element => 
 
 const FAQ = (): JSX.Element => {
   return (
-    <div className="flex flex-col gap-10 py-16 px-56">
+    <div className="flex flex-col gap-6 sm:gap-10 py-8 sm:py-16 px-2 sm:px-56">
       <div className="flex flex-col justify-center items-center">
         <h3 className="text-secondary font-semibold text-xl">FAQ</h3>
         <p className="text-3xl font-extrabold text-backgroundBlack">Your Questions Answered</p>
