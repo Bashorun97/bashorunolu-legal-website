@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+@media (max-width: 640px) {
+  #hero-picture {
+    display: none;
+  }
+
+  #nav-items-button {
+    display: block;
+  }
+
+  #nav-items-contain {
+    display: none;
+  }
+
+  #contact-us {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  #nav-items-button {
+    display: none;
+  }
+}

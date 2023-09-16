@@ -35,7 +35,6 @@ const Card = ({backgroundImage, description}: CardProps): JSX.Element => {
 
 const Heading = (): JSX.Element => {
 
-  const [shouldShow, setShouldShow] = React.useState<boolean>(false);
   const [showServices, setShowServices] = React.useState<boolean>(false);
 
   const toogleShowServices = () => {
@@ -50,43 +49,38 @@ const Heading = (): JSX.Element => {
       <div className="flex py-2 w-full justify-between items-center">
         <Image src={Logo} alt="Logo" height={65} width={65} />
 
-        <button className="border border-gray-300 px-3 py-3">Hello</button>
+        <button id="nav-items-button" className="border border-gray-300 px-3 py-3">Hello</button>
 
-        {shouldShow && (
-          <div className="flex flex-grow justify-center content-center gap-8">
-            <NavButton active>Home</NavButton>
+        <div id="nav-items-contain" className="flex flex-grow justify-center content-center gap-8">
+          <NavButton active>Home</NavButton>
 
-            <div className="relative">
-              <NavButton onClick={toogleShowServices}><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
-              {/** TODO: Make this show **/}
-              {showServices && (
-                <div className="absolute p-2 grid grid-cols-2 gap-3 top-8 -left-60 rounded-lg bg-backgroundWhite" style={{width: "37rem"}}>
-                  <Card
-                    backgroundImage={SoImage}
-                    description="Property Law Practice (Conveyance Practice)"
-                  />
-                  <Card
-                    backgroundImage={SoLaw}
-                    description="Corporate Law Practice"
-                  />
-                  <Card
-                    backgroundImage={SoStore}
-                    description="Commercial and Contractual Law"
-                  />
-                  <Card
-                    backgroundImage={SoFamily}
-                    description="Family Law"
-                  />
-                </div>
-              )}
-            </div>
-            <NavButton>Contact me</NavButton>
+          <div className="relative">
+            <NavButton onClick={toogleShowServices}><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
+            {showServices && (
+              <div className="absolute p-2 grid grid-cols-2 gap-3 top-8 -left-60 rounded-lg bg-backgroundWhite" style={{width: "37rem"}}>
+                <Card
+                  backgroundImage={SoImage}
+                  description="Property Law Practice (Conveyance Practice)"
+                />
+                <Card
+                  backgroundImage={SoLaw}
+                  description="Corporate Law Practice"
+                />
+                <Card
+                  backgroundImage={SoStore}
+                  description="Commercial and Contractual Law"
+                />
+                <Card
+                  backgroundImage={SoFamily}
+                  description="Family Law"
+                />
+              </div>
+            )}
           </div>
-        )}
+          <NavButton>Contact us</NavButton>
+        </div>
 
-        {shouldShow && (
-          <div>call: <span className="text-lg font-bold">(234) 01234567890</span></div>
-        )}
+        <div id="contact-us">call: <span className="text-lg font-bold">(234) 01234567890</span></div>
       </div>
 
       <div className="flex flex-grow">
@@ -104,14 +98,12 @@ const Heading = (): JSX.Element => {
             providing efficient and cost-effective solutions to your legal needs.
           </p>
 
-          <button className="bg-white text-black w-fit px-8 py-3 rounded-md">Contact me</button>
+          <button className="bg-gray-50 text-black w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
         </div>
 
-        {/** TODO: Make this show
-        <div className="flex w-1/2 justify-end">
+        <div id="hero-picture" className="flex w-1/2 justify-end">
           <Image priority src={HeroPicture} alt="Hero picture" height={500} width={470} />
         </div>
-        */}
 
       </div>
     </div>
