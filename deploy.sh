@@ -6,9 +6,9 @@ set -ex
 GIT_COMMIT=$(git rev-parse HEAD)
 
 # Build the docker image
-docker build \
-   -t us-central1-docker.pkg.dev/bashorunolu-website-staging/services/website:$GIT_COMMIT \
-   .
+gcloud builds \
+   submit \
+   --tag=us-central1-docker.pkg.dev/bashorunolu-website-staging/services/website:$GIT_COMMIT
 
 # Deploy the docker image to Cloud Run
 gcloud run deploy website \
