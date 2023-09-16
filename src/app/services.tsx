@@ -30,7 +30,7 @@ const Card = ({title, backgroundImage, description}: CardProps): JSX.Element => 
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <button className="bg-backgroundBlack text-white rounded-md w-32 py-3 px-4">Learn More</button>
+      <button className="bg-backgroundBlack text-white rounded-md w-32 py-3 px-4 hover:bg-gray-800">Learn More</button>
     </div>
   );
 }

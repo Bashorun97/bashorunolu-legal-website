@@ -63,8 +63,8 @@ const FAQ = (): JSX.Element => {
                 Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
               </p>
               <div className="flex gap-2">
-                <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md">View all services</button>
-                <button className="border border-backgroundBlack px-5 py-3 rounded-md">Contact me</button>
+                <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
+                <button className="border border-backgroundBlack px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
               </div>
             </div>
           )}
