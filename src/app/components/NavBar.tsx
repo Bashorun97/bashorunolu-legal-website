@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
 
-import {Caveat, Mulish} from "next/font/google";
+import {useRouter, usePathname} from "next/navigation";
 import Image, {StaticImageData} from "next/image";
 
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
@@ -16,6 +18,9 @@ import SoImage from "../../assets/so-company.png";
 const NavBar = (): JSX.Element => {
   const [showServices, setShowServices] = React.useState<boolean>(false);
   const [showServiceMenu, setShowServicesMenu] = React.useState<boolean>(false);
+
+  const router = useRouter();
+  const pathName = usePathname();
 
   const toggleShowServicesMenu = () => {
     setShowServicesMenu(!showServiceMenu);
@@ -55,34 +60,38 @@ const NavBar = (): JSX.Element => {
 
         {/** Nav items **/}
         <div id="nav-items-contain" className="flex justify-center content-center gap-8">
-          <NavButton active>Home</NavButton>
+          <NavButton onClick={() => router.push("/")} active={pathName == "/"}>Home</NavButton>
 
           <div className="group relative">
-            <NavButton><p className="flex gap-1">Services <ChevronDown /></p></NavButton>
+            <NavButton active={pathName.includes("services")}><p className="flex gap-1 items-center justify-center">Services <ChevronDown className="w-4 text-white" /></p></NavButton>
 
             <div className="hidden group-hover:block absolute bg-transparent top-4 -left-60" style={{width: "37rem"}}>
               <div className="grid grid-cols-2 mt-5 gap-3 p-2 w-full h-full rounded-lg bg-backgroundWhite">
                 <Card
                   backgroundImage={SoImage}
                   description="Property Law Practice (Conveyance Practice)"
+                  onClick={() => router.push("/services/property-law-practice")}
                 />
                 <Card
                   backgroundImage={SoLaw}
                   description="Corporate Law Practice"
+                  onClick={() => router.push("/services/corporate-law-practice")}
                 />
                 <Card
                   backgroundImage={SoStore}
                   description="Commercial and Contractual Law"
+                  onClick={() => router.push("/services/commercial-and-contractal-law")}
                 />
                 <Card
                   backgroundImage={SoFamily}
                   description="Family Law"
+                  onClick={() => router.push("/services/family-law")}
                 />
               </div>
             </div>
           </div>
 
-          <NavButton>Contact us</NavButton>
+          <NavButton onClick={() => router.push("/contact-us")} active={pathName == "/contact-us"}>Contact us</NavButton>
         </div>
 
         <div id="contact-us">call: <span className="text-lg font-bold">(234) 01234567890</span></div>
@@ -93,11 +102,12 @@ const NavBar = (): JSX.Element => {
 
 interface CardProps {
   description: string;
+  onClick: () => void;
   backgroundImage: StaticImageData;
 }
-const Card = ({backgroundImage, description}: CardProps): JSX.Element => {
+const Card = ({backgroundImage, description, onClick}: CardProps): JSX.Element => {
   return (
-    <div className="rounded-lg py-3 px-2 cursor-pointer" style={{
+    <div className="rounded-lg py-3 px-2 cursor-pointer" onClick={onClick} style={{
       background: `#4546551f url(${backgroundImage.src})`,
       backgroundRepeat: "no-repeat",
       backgroundPosition: "100% 0px",
