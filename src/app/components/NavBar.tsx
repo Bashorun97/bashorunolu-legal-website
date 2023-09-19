@@ -22,14 +22,18 @@ const NavBar = (): JSX.Element => {
   const router = useRouter();
   const pathName = usePathname();
 
+  const toggleShowServices = () => {
+    setShowServices(!showServices);
+  };
+
   const toggleShowServicesMenu = () => {
     setShowServicesMenu(!showServiceMenu);
-  }
+  };
 
   return (
     <div className="relative">
       <div className={`fixed bg-gray-900 ${!showServiceMenu ? "hidden" : ""} bg-opacity-70 h-screen w-full top-0 right-0 z-50`}>
-        <div className="flex flex-col gap-8 w-4/6 float-right pt-2 h-screen bg-backgroundBlack px-2">
+        <div className="flex flex-col gap-8 w-4/6 float-right h-full pt-2 bg-backgroundBlack px-2">
 
           <div className="flex justify-between items-center">
             <h3 className="text-white text-xl font-bold">Menu</h3>
@@ -37,12 +41,38 @@ const NavBar = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col gap-4 text-white font-semibold">
-            <button className="bg-nude px-4 py-3 rounded-md">Home</button>
-            <button className="bg-nude px-4 py-3 rounded-md">Services</button>
-            <button className="bg-nude px-4 py-3 rounded-md">Contact us</button>
+            <button onClick={() => router.push("/")} className="bg-nude px-4 py-3 rounded-md">Home</button>
+            <button className="bg-nude flex flex-col items-center rounded-md">
+              <div onClick={toggleShowServices} className="px-4 py-3">Services</div>
+
+              <div className={`transition-all delay-75 ${showServices ? "h-full mt-2" : "h-0 mt-0"} bg-backgroundWhite rounded-b-lg overflow-hidden w-full`}>
+                <MiniCard
+                  backgroundImage={SoImage}
+                  description="Property Law Practice (Conveyance Practice)"
+                  onClick={() => router.push("/services/property-law-practice")}
+                />
+                <MiniCard
+                  backgroundImage={SoLaw}
+                  description="Corporate Law Practice"
+                  onClick={() => router.push("/services/corporate-law-practice")}
+                />
+                <MiniCard
+                  backgroundImage={SoStore}
+                  description="Commercial and Contractual Law"
+                  onClick={() => router.push("/services/commercial-and-contractal-law")}
+                />
+                <MiniCard
+                  backgroundImage={SoFamily}
+                  description="Family Law"
+                  onClick={() => router.push("/services/family-law")}
+                />
+              </div>
+
+            </button>
+            <button onClick={() => router.push("/contact-us")} className="bg-nude px-4 py-3 rounded-md">Contact us</button>
           </div>
 
-          <div className="flex flex-grow justify-center items-end bg-red-300">
+          <div className="flex justify-center mt-2 bg-nude px-4 py-3 font-bold rounded-md">
             call: 234 01234567890
           </div>
         </div>
@@ -98,6 +128,26 @@ const NavBar = (): JSX.Element => {
       </div>
     </div>
   );
+}
+
+interface MiniCardProps {
+  description: string;
+  onClick: () => void;
+  backgroundImage: StaticImageData;
+}
+
+const MiniCard = ({description, backgroundImage, onClick}: MiniCardProps): JSX.Element => {
+  return (
+    <div className="flex flex-col rounded-lg items-start px-3 py-3" onClick={onClick} style={{
+      background: `white url(${backgroundImage.src})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "100% 0px",
+      backgroundSize: "70px",
+    }}>
+      <div className="text-secondary text-sm">We are experts at</div>
+      <div className="text-backgroundBlack w-2/3 text-left text-sm">{description}</div>
+    </div>
+  )
 }
 
 interface CardProps {
