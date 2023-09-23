@@ -2,6 +2,7 @@
 @tailwind utilities;
 @tailwind components;
 
+
 @media (max-width: 640px) {
   #hero-picture {
     display: none;
@@ -24,4 +25,10 @@
   #nav-items-button {
     display: none;
   }
+}
+
+
+
+body {
+  background-color: #F7F8FF;
 }
