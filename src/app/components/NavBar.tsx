@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import {useRouter, usePathname} from "next/navigation";
 import Image, {StaticImageData} from "next/image";
+import {useRouter, usePathname} from "next/navigation";
 
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import XCircleIcon from "@heroicons/react/24/solid/XCircleIcon";
@@ -69,6 +69,7 @@ const NavBar = (): JSX.Element => {
               </div>
 
             </button>
+            <button onClick={() => router.push("/blog")} className="bg-nude px-4 py-3 rounded-md">Blog</button>
             <button onClick={() => router.push("/contact-us")} className="bg-nude px-4 py-3 rounded-md">Contact us</button>
           </div>
 
@@ -121,6 +122,7 @@ const NavBar = (): JSX.Element => {
             </div>
           </div>
 
+          <NavButton onClick={() => router.push("/blog")} active={pathName == "/blog"}>Blog</NavButton>
           <NavButton onClick={() => router.push("/contact-us")} active={pathName == "/contact-us"}>Contact us</NavButton>
         </div>
 
