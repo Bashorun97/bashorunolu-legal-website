@@ -1,16 +1,16 @@
 import React from "react";
 
-interface PostCardProps {
+interface TopPostProps {
   title: string;
   description: string;
   onClick: () => void;
 }
 
-const PostCard = ({onClick}: PostCardProps): JSX.Element => {
+const TopPost = ({onClick}: TopPostProps): JSX.Element => {
   return (
-    <div onClick={onClick} className="flex flex-col cursor-pointer h-full bg-cardBackground overflow-hidden rounded-lg">
+    <div onClick={onClick} className="flex flex-col cursor-pointer h-full  bg-topPosts border-none overflow-hidden rounded-lg">
       <div className="bg-red-400 flex-grow" style={{minHeight: "9rem"}}></div>
-      <div className="flex flex-col gap-1 p-3">
+      <div className="flex flex-col gap-1 p-3 text-white">
         <h3 className="font-semibold text-md">Mask Pencil Vertical</h3>
         <p className="text-sm">
           Proofreading is the final stage of the editing process,
@@ -22,4 +22,4 @@ const PostCard = ({onClick}: PostCardProps): JSX.Element => {
     </div>
   );
 }
-export default PostCard;
+export default TopPost;

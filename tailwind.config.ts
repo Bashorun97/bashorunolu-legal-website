@@ -14,7 +14,9 @@ const config: Config = {
         secondary: "#70A076",
         backgroundBlack: "#454655",
         backgroundWhite: "#F7F8FF",
-        cardBackground: "#EDEFF6"
+        cardBackground: "#EDEFF6",
+        blogHeadingBg: "#13294B",
+        topPosts:"#0F213C"
         
       },
       backgroundImage: {
