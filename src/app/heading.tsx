@@ -61,7 +61,7 @@ const NewHeading = (): JSX.Element => {
           <button className="bg-gray-50 text-black w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
         </div>
 
-        <div id="hero-picture" className="flex w-1/2 justify-end">
+        <div className="hidden lg:flex w-1/2 justify-end">
           <Image src={HeroPicture} alt="Hero picture" height={500} width={470} />
         </div>
 

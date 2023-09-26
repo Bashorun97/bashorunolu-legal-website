@@ -2,8 +2,8 @@
 
 import React from "react";
 
-import Image, { StaticImageData } from "next/image";
-import { useRouter, usePathname } from "next/navigation";
+import Image, {StaticImageData} from "next/image";
+import {useRouter, usePathname} from "next/navigation";
 
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import XCircleIcon from "@heroicons/react/24/solid/XCircleIcon";
@@ -31,11 +31,10 @@ const NavBar = (): JSX.Element => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative text-white">
       <div
-        className={`fixed bg-gray-900 ${
-          !showServiceMenu ? "hidden" : ""
-        } bg-opacity-70 h-screen w-full top-0 right-0 z-50`}
+        className={`fixed bg-gray-900 ${!showServiceMenu ? "hidden" : ""
+          } bg-opacity-70 h-screen w-full top-0 right-0 z-50`}
       >
         <div className="flex flex-col gap-8 w-4/6 float-right h-full pt-2 bg-backgroundBlack px-2">
           <div className="flex justify-between items-center">
@@ -59,9 +58,8 @@ const NavBar = (): JSX.Element => {
               </div>
 
               <div
-                className={`transition-all delay-75 ${
-                  showServices ? "h-full mt-2" : "h-0 mt-0"
-                } bg-backgroundWhite rounded-b-lg overflow-hidden w-full`}
+                className={`transition-all delay-75 ${showServices ? "h-full mt-2" : "h-0 mt-0"
+                  } bg-backgroundWhite rounded-b-lg overflow-hidden w-full`}
               >
                 <MiniCard
                   backgroundImage={SoImage}
@@ -115,7 +113,7 @@ const NavBar = (): JSX.Element => {
         </div>
 
         {/** Mobile menu **/}
-        <div id="mobile-menu" className="flex pr-1 sm:hidden">
+        <div id="mobile-menu" className="flex pr-1 lg:hidden">
           <Bars3Icon
             className="h-12 w-12 text-white"
             onClick={toggleShowServicesMenu}
@@ -124,8 +122,7 @@ const NavBar = (): JSX.Element => {
 
         {/** Nav items **/}
         <div
-          id="nav-items-contain"
-          className="flex justify-center content-center gap-8"
+          className="hidden lg:flex justify-center content-center gap-8"
         >
           <NavButton onClick={() => router.push("/")} active={pathName == "/"}>
             Home
@@ -140,7 +137,7 @@ const NavBar = (): JSX.Element => {
 
             <div
               className="hidden group-hover:block absolute bg-transparent top-4 -left-60"
-              style={{ width: "37rem" }}
+              style={{width: "37rem"}}
             >
               <div className="grid grid-cols-2 mt-5 gap-3 p-2 w-full h-full rounded-lg bg-backgroundWhite">
                 <Card
@@ -185,7 +182,7 @@ const NavBar = (): JSX.Element => {
           </NavButton>
         </div>
 
-        <div id="contact-us">
+        <div className="hidden lg:block">
           call: <span className="text-lg font-bold">(234) 01234567890</span>
         </div>
       </div>
@@ -247,7 +244,7 @@ const Card = ({
       <h2 className="text-secondary text-lg font-semibold">
         We are experts at
       </h2>
-      <p className="text-backgroundBlack font-extrabold text-xl">
+      <p className="text-backgroundBlack font-bold text-xl">
         {description}
       </p>
     </div>

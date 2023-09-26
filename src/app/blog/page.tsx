@@ -8,41 +8,42 @@ import TopPost from "../components/TopPost";
 
 const Page = () => {
   return (
-    <div>
-      <div className="px-20 pb-20 pt-2 bg-blogHeadingBg">
+    <div className="bg-white">
+      <div className="px-2 md:px-20 pb-20 pt-2 bg-blogHeadingBg">
         <Navbar />
         <h1 className="text-white font-extrabold text-6xl py-5">Blog</h1>
         <h4 className="text-primary font-extrabold text-2xl pt-2">Top Post</h4>
-      
 
-      <div className="flex  gap-3 pt-4">
-        
-        <div className="flex-grow min-h-fit">
-          <TopPost
-            title="Top"
-            description="posts"
-            onClick={() => console.log("these are the cards ")}
-          />
-        </div>
 
-        <div className="flex flex-col gap-3" style={{width: "22rem"}}>
-          <TopPost
-            title="Top"
-            description="posts"
-            onClick={() => console.log("these are the cards ")}
-          />
-          <TopPost
-            title="Top"
-            description="posts"
-            onClick={() => console.log("these are the cards ")}
-          />
+        <div className="flex gap-3 pt-4">
+          <div className="flex-grow min-h-fit" style={{
+            minHeight: "70vh"
+          }}>
+            <TopPost
+              title="Top"
+              description="posts"
+              onClick={() => console.log("these are the cards ")}
+            />
+          </div>
+
+          <div className="hidden lg:flex flex-col gap-3" style={{width: "22rem"}}>
+            <TopPost
+              title="Top"
+              description="posts"
+              onClick={() => console.log("these are the cards ")}
+            />
+            <TopPost
+              title="Top"
+              description="posts"
+              onClick={() => console.log("these are the cards ")}
+            />
+          </div>
         </div>
       </div>
-      </div>
 
-      <div className="flex flex-col gap-2 my-20 px-20">
-        <h4 className="text-lg">Other Posts</h4>
-        <div className="grid grid-cols-3 gap-4 ">
+      <div className="flex flex-col gap-2 my-10 px-2 md:px-20">
+        <h4 className="text-2xl font-semibold">Other Posts</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 ">
           <PostCard
             title="card"
             description="post cards"

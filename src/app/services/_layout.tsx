@@ -5,7 +5,12 @@ import React from "react";
 import {StaticImageData} from "next/image";
 
 import NavBar from "../components/NavBar";
+import Footer from "../components/footer";
+import Postcard from "../components/Postcard";
+import PostCard from "../components/Postcard";
 import Accordion from "../components/accordion";
+
+import BookAppointmentBg from "../../assets/book-appointment-bg.png";
 
 interface LayoutProps {
   headingText: string;
@@ -15,26 +20,23 @@ interface LayoutProps {
 const Layout = ({heroImage, headingText}: LayoutProps) => {
   return (
     <div className="relative">
-      <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 h-96 sm:pb-0 px-2 md:px-16 gap-4 sm:gap-2 bg-nude" style={{
-        height: "59vh",
+      <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 h-96 md:pb-0 px-2 md:px-16 gap-4 md:gap-2 bg-nude" style={{
+        height: "65vh",
         background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${heroImage.src})`,
       }}>
         <NavBar />
-        <div className="flex flex-col h-full pt-12 w-1/2 gap-1">
+        <div className="flex flex-col h-full pt-12 md:w-1/2 gap-1">
           <p className="text-xl text-primary font-bold">We are experts at</p>
-          <p className="text-5xl font-extrabold leading-tight">{headingText}</p>
+          <p className="text-4xl xl:text-5xl font-extrabold leading-tight">{headingText}</p>
         </div>
-
       </div>
 
-      <div className="absolute w-full pb-32" style={{
+      <div className="absolute w-full" style={{
         top: "50vh"
       }}>
-
         <div className="flex flex-col gap-8">
 
-          <div className="flex flex-col rounded-lg bg-white gap-4 mx-16 p-4">
-
+          <div className="flex flex-col rounded-lg bg-white gap-4 mx-2 md:mx-16 p-4">
             <Accordion
               open
               title="What types of legal services do you provide"
@@ -122,8 +124,8 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
           <div className="flex flex-col px-16 py-8 gap-4 bg-white">
             <h4 className="text-2xl font-semibold">Related Posts</h4>
 
-            <div className="grid grid-cols-3 gap-6">
-              <Post
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <PostCard
                 title="Mask Pencil Vertical"
                 description={`
                   Proofreading is the final stage of the editing process,
@@ -133,7 +135,7 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
                 onClick={() => console.log("Hello")}
               />
 
-              <Post
+              <PostCard
                 title="Mask Pencil Vertical"
                 description={`
                   Proofreading is the final stage of the editing process,
@@ -142,17 +144,7 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
                 `}
                 onClick={() => console.log("Hello")}
               />
-              <Post
-                title="Mask Pencil Vertical"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-                onClick={() => console.log("Hello")}
-              />
-
-              <Post
+              <PostCard
                 title="Mask Pencil Vertical"
                 description={`
                   Proofreading is the final stage of the editing process,
@@ -162,7 +154,7 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
                 onClick={() => console.log("Hello")}
               />
 
-              <Post
+              <PostCard
                 title="Mask Pencil Vertical"
                 description={`
                   Proofreading is the final stage of the editing process,
@@ -172,7 +164,17 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
                 onClick={() => console.log("Hello")}
               />
 
-              <Post
+              <PostCard
+                title="Mask Pencil Vertical"
+                description={`
+                  Proofreading is the final stage of the editing process,
+                  focusing on surface errors such as misspellings and mistakes
+                  in grammar and punctuation.
+                `}
+                onClick={() => console.log("Hello")}
+              />
+
+              <PostCard
                 title="Mask Pencil Vertical"
                 description={`
                   Proofreading is the final stage of the editing process,
@@ -185,10 +187,10 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
             </div>
           </div>
 
-          <div className="flex">
-            Hello World
+          <div id="footer">
+            <BookAppointment />
+            <Footer />
           </div>
-
         </div>
       </div>
     </div>
@@ -201,20 +203,15 @@ interface PostProps {
   onClick: () => void;
 }
 
-const Post = ({onClick}: PostProps): JSX.Element => {
+const BookAppointment = () => {
   return (
-    <div onClick={onClick} className="flex flex-col cursor-pointer h-96 bg-backgroundWhite overflow-hidden rounded-lg">
-      <div className="flex-grow bg-red-400"></div>
-      <div className="flex flex-col gap-1 p-2">
-        <h3 className="font-semibold text-lg">Mask Pencil Vertical</h3>
-        <p>
-          Proofreading is the final stage of the editing process,
-          focusing on surface errors such as misspellings and mistakes
-          in grammar and punctuation.
-        </p>
-      </div>
+    <div className="flex flex-col gap-7 items-center justify-center" style={{
+      height: "27rem",
+      background: `url(${BookAppointmentBg.src}) no-repeat center center`,
+    }}>
+      <h4 className="text-4xl text-center text-white font-extrabold">Book an Appointment With Us Today!</h4>
+      <button className="bg-white px-6 py-3 rounded-md">Book an Appointment</button>
     </div>
   );
-}
-
+};
 export default Layout;
