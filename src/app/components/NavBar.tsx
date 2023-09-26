@@ -170,7 +170,7 @@ const NavBar = (): JSX.Element => {
 
           <NavButton
             onClick={() => router.push("/blog")}
-            active={pathName == "/blog"}
+            active={pathName.includes("blog")}
           >
             Blog
           </NavButton>

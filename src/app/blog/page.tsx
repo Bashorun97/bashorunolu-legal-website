@@ -21,21 +21,21 @@ const Page = () => {
           }}>
             <TopPost
               title="Top"
+              route="/blog/1"
               description="posts"
-              onClick={() => console.log("these are the cards ")}
             />
           </div>
 
           <div className="hidden lg:flex flex-col gap-3" style={{width: "22rem"}}>
             <TopPost
               title="Top"
+              route="/blog/1"
               description="posts"
-              onClick={() => console.log("these are the cards ")}
             />
             <TopPost
               title="Top"
+              route="/blog/1"
               description="posts"
-              onClick={() => console.log("these are the cards ")}
             />
           </div>
         </div>
@@ -46,48 +46,48 @@ const Page = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 ">
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
           <PostCard
             title="card"
+            route="/blog/1"
             description="post cards"
-            onClick={() => console.log("these are the cards ")}
           />
         </div>
       </div>

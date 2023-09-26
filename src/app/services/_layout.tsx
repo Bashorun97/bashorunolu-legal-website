@@ -127,61 +127,61 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <PostCard
                 title="Mask Pencil Vertical"
+                route="/blog/1"
                 description={`
                   Proofreading is the final stage of the editing process,
                   focusing on surface errors such as misspellings and mistakes
                   in grammar and punctuation.
                 `}
-                onClick={() => console.log("Hello")}
               />
 
               <PostCard
                 title="Mask Pencil Vertical"
+                route="/blog/1"
                 description={`
                   Proofreading is the final stage of the editing process,
                   focusing on surface errors such as misspellings and mistakes
                   in grammar and punctuation.
                 `}
-                onClick={() => console.log("Hello")}
               />
               <PostCard
                 title="Mask Pencil Vertical"
+                route="/blog/1"
                 description={`
                   Proofreading is the final stage of the editing process,
                   focusing on surface errors such as misspellings and mistakes
                   in grammar and punctuation.
                 `}
-                onClick={() => console.log("Hello")}
-              />
-
-              <PostCard
-                title="Mask Pencil Vertical"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-                onClick={() => console.log("Hello")}
               />
 
               <PostCard
                 title="Mask Pencil Vertical"
+                route="/blog/1"
                 description={`
                   Proofreading is the final stage of the editing process,
                   focusing on surface errors such as misspellings and mistakes
                   in grammar and punctuation.
                 `}
-                onClick={() => console.log("Hello")}
               />
 
               <PostCard
                 title="Mask Pencil Vertical"
+                route="/blog/1"
                 description={`
                   Proofreading is the final stage of the editing process,
                   focusing on surface errors such as misspellings and mistakes
                   in grammar and punctuation.
                 `}
-                onClick={() => console.log("Hello")}
+              />
+
+              <PostCard
+                title="Mask Pencil Vertical"
+                route="/blog/1"
+                description={`
+                  Proofreading is the final stage of the editing process,
+                  focusing on surface errors such as misspellings and mistakes
+                  in grammar and punctuation.
+                `}
               />
 
             </div>

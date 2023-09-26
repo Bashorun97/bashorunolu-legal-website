@@ -8,7 +8,7 @@ import Footer from "../../components/footer"
 const Effctive = () => {
   return (
     <div>
-      <div className="px-20 py-4 pb-7 flex flex-col gap-12 bg-blogHeadingBg">
+      <div className="px-20 py-4 pb-7 flex flex-col gap-8 bg-blogHeadingBg">
         <NavBar />
         <h1 className="text-white font-extrabold text-6xl">Blog Post</h1>
       </div>
@@ -33,7 +33,7 @@ const Effctive = () => {
         </p>
       </div>
 
-      <div className="bg-red-400 my-8 mx-40" style={{height: "35rem"}}></div>
+      <div className="bg-red-400 my-8 mx-40 rounded-xl" style={{height: "35rem"}}></div>
 
       <div className="px-80">
         <p>
@@ -46,7 +46,7 @@ const Effctive = () => {
           terms that Lorem Ipsum is that huge, huge no no to forswear forever.
         </p>
 
-        <p className="font-bold text-2xl border-l-8 border-gray-700 pl-2 my-4">
+        <p className="font-bold text-2xl border-l-8 border-gray-700 pl-3 my-4">
           Design comps, layouts, wireframes—we believe that clients will surely
           accept that you go about things the facile way. It’s a matter of time.
         </p>
@@ -75,32 +75,32 @@ const Effctive = () => {
             <PostCard
               title="cards"
               description="post cards"
-              onClick={() => console.log("these are the cards ")}
+              route="/blog/effective-subtract-fill"
             />
             <PostCard
               title="card"
               description="post cards"
-              onClick={() => console.log("these are the cards ")}
+              route="/blog/effective-subtract-fill"
             />
             <PostCard
               title="card"
               description="post cards"
-              onClick={() => console.log("these are the cards ")}
+              route="/blog/effective-subtract-fill"
             />
             <PostCard
               title="card"
               description="post cards"
-              onClick={() => console.log("these are the cards ")}
+              route="/blog/effective-subtract-fill"
             />
             <PostCard
               title="card"
               description="post cards"
-              onClick={() => console.log("these are the cards ")}
+              route="/blog/effective-subtract-fill"
             />
             <PostCard
               title="card"
               description="post cards"
-              onClick={() => console.log("these are the cards ")}
+              route="/blog/effective-subtract-fill"
             />
           </div>
 

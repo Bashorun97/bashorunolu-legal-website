@@ -1,12 +1,21 @@
 import React from "react";
 
+import {useRouter, usePathname} from "next/navigation";
+
 interface PostCardProps {
   title: string;
+  route?: string;
   description: string;
-  onClick: () => void;
 }
 
-const PostCard = ({onClick}: PostCardProps): JSX.Element => {
+const PostCard = ({route = "/blog/1"}: PostCardProps): JSX.Element => {
+
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push(route);
+  }
+
   return (
     <div onClick={onClick} className="flex flex-col cursor-pointer h-full bg-cardBackground overflow-hidden rounded-lg">
       <div className="bg-red-400 flex-grow" style={{minHeight: "15rem"}}></div>
