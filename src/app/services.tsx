@@ -5,7 +5,10 @@ import {StaticImageData} from "next/image";
 import SoLaw from "../assets/so-law.png";
 import SoStore from "../assets/so-store.png";
 import SoFamily from "../assets/so-family.png";
-import SoImage from "../assets/so-company.png";
+import PLP from "../assets/PLP.png";
+import CLP from "../assets/CLP.png";
+import CCL from "../assets/CCL.png";
+import FL from "../assets/FL.png";
 
 interface CardProps {
   title: string;
@@ -15,31 +18,31 @@ interface CardProps {
 
 const Card = ({title, backgroundImage, description}: CardProps): JSX.Element => {
   return (
-    <div className="flex flex-col justify-between rounded-md px-4 py-6" style={{
-      height: "28rem",
-      background: `#4546551f url(${backgroundImage.src})`,
+    <div className="flex flex-col justify-between mb-10 rounded-md px-4 py-6 w-[rem] " style={{
+      height: "40rem",
+      background: ` url(${backgroundImage.src})`,
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "250% 0px",
+      
     }}>
-      <div className="flex flex-col leading-4">
+      <div className="flex flex-col leading-4 ml-6 mt-4">
         <p className="text-secondary text-md font-semibold">We are experts at</p>
-        <p className="text-backgroundBlack font-bold text-2xl">{title}</p>
+        <p className="text-blueE font-bold text-2xl">{title}</p>
       </div>
-      <ul className="list-disc list-inside">
+      <ul className="list-disc list-inside ml-6">
         {description.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
-      <button className="bg-backgroundBlack text-white rounded-md w-32 py-3 px-4 hover:bg-gray-800">Learn More</button>
+      <button className="bg-blueE ml-6 mb-6 text-white rounded-md w-32 py-3 px-4 hover:bg-gray-800">Learn More</button>
     </div>
   );
 }
 
 const Services = (): JSX.Element => {
   return (
-    <div className="bg-backgroundWhite grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-2 md:px-32 py-4 md:py-8">
+    <div className=" mx-16 ">
       <Card
-        backgroundImage={SoImage}
+        backgroundImage={PLP}
         title="Property Law Practice (Conveyance Practice)"
         description={[
           "Sales of land",
@@ -52,7 +55,7 @@ const Services = (): JSX.Element => {
       />
       <Card
         title="Corporate Law Practice"
-        backgroundImage={SoLaw}
+        backgroundImage={CLP}
         description={[
           "Company Promotion and Facilitation",
           "Company Incorporation Processes",
@@ -67,7 +70,7 @@ const Services = (): JSX.Element => {
       />
       <Card
         title="Commercial and Contractual Law"
-        backgroundImage={SoStore}
+        backgroundImage={CCL}
         description={[
           "Drafting and Evaluating Hire Purchase Agreements",
           "Profound Knowledge of Copyright Law",
@@ -80,7 +83,7 @@ const Services = (): JSX.Element => {
 
       <Card
         title="Litigation and Dispute Resolution"
-        backgroundImage={SoFamily}
+        backgroundImage={FL}
         description={[
           "Divorce and Separation",
           "Child Custody and Support",

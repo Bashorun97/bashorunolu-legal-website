@@ -4,12 +4,14 @@ import React from "react";
 
 import Layout from "../_layout";
 
-import HeroBackground from "../../../assets/hero-background.png";
+import CLPImage from "../../../assets/CLPImage.png";
+
+
 
 const CorporateLawPractice = () => {
   return (
     <Layout
-      heroImage={HeroBackground}
+    backgroundImage={CLPImage}
       headingText="Corporate Law Practice"
     />
   );

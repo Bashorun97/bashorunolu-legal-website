@@ -22,12 +22,12 @@ const Accordion = ({open = false, title, body}: AccordionProps): JSX.Element => 
   return (
     <div className="text-black border border-gray-300 rounded-md px-4 py-1">
       <div onClick={onClick} className={`py-3 text-lg flex justify-between cursor-pointer border-gray-300 ${openDefault ? "border-b" : ""}`}>
-        <div>{title}</div>
+        <div >{title}</div>
         <button onClick={onClick} className={`origin-center ${openDefault ? "rotate-180" : "rotate-0"}`}>
           <ChevronDown />
         </button>
       </div>
-      <div className={`transition-all overflow-hidden ${openDefault ? "py-2 h-full" : "h-0 py-0"}`}>
+      <div className={`transition-all overflow-hidden ${openDefault ? "py-4 h-full" : "h-0 py-0"}`}>
         {body}
       </div>
     </div>
@@ -39,7 +39,7 @@ const FAQ = (): JSX.Element => {
     <div className="flex flex-col gap-6 sm:gap-10 py-8 sm:py-16 px-2 md:px-56">
       <div className="flex flex-col justify-center items-center">
         <h3 className="text-secondary font-semibold text-xl">FAQ</h3>
-        <p className="text-3xl font-extrabold text-backgroundBlack">Your Questions Answered</p>
+        <p className="text-3xl font-extrabold text-blueE">Your Questions Answered</p>
       </div>
 
       <div className="flex flex-col gap-6">
@@ -57,8 +57,8 @@ const FAQ = (): JSX.Element => {
                 Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
               </p>
               <div className="flex gap-2">
-                <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
-                <button className="border border-backgroundBlack px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">VIEW ALL SERVICES</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
           )}
@@ -67,35 +67,26 @@ const FAQ = (): JSX.Element => {
         <Accordion
           title="How do I schedule a consultation with you?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div className="flex flex-col gap-4">
+              <p>Consultation can be scheduled based on its suitability; appointment booking via the available form on the page, email (olu.bash.law@gmail.com) or phone</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
+            
           )}
         />
 
         <Accordion
-          title="Is the initial consultation free?"
+          title="Is there an initial consultation free?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
-            </div>
-          )}
-        />
-
-        <Accordion
-          title="How can I reach you for inquiries or assistance?"
-          body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
-            </div>
-          )}
-        />
-
-        <Accordion
-          title="What information should I bring to the initial consultation?"
-          body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>The initial Consultation fee being relevant if it is premised on any basis that has a utility value, the fee which will be decided subsequent to the initial contact.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
@@ -103,8 +94,12 @@ const FAQ = (): JSX.Element => {
         <Accordion
           title="How is billing handled for your legal services?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>Billing is handled via subject specifics and transactional value, the channel being dependent on the aforementioned.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
@@ -112,17 +107,25 @@ const FAQ = (): JSX.Element => {
         <Accordion
           title="Are there any upfront fees for services like document review or contract drafting?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>There are upfront fees for document review and drafting, a 40% deposit and the rest on completion.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
 
         <Accordion
-          title="Can I get a quote for the cost of legal services before proceeding?"
+          title="Can I get a quote for the cost of relevant services before proceeding?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>Yes, we’d oblige you with a quotation bearing the cost of services upon request.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
@@ -130,38 +133,47 @@ const FAQ = (): JSX.Element => {
         <Accordion
           title="Do you offer payment plans or options for clients with financial constraints?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>There is Pro Bono service and this is inextricably linked to individual cases.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
 
         <Accordion
-          title="Can I get references or client testimonials for you?"
+          title="Can I get references and clients’ testimonials from you?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>There is a dedicated section of the page for these, bearing the testimonials of a myriad of clients and partners we have worked with from the incipience of this establishment.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
+
+       
+
+       
 
         <Accordion
           title="Do you offer virtual or remote consultations for clients who cannot visit your office in person?"
           body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
+            <div  className="flex flex-col gap-4">
+              <p>A significant majority of undertakings are primarily by virtual or remote consultations, and physical or onsite appointment when necessary.</p>
+              <div className="flex gap-2">
+                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
+              </div>
             </div>
           )}
         />
 
-        <Accordion
-          title="How can I get started with your law firm and initiate the legal process for my case?"
-          body={(
-            <div>
-              <p>Proofreading is the final stage of the editing process, focusing on surface errors such as misspellings and mistakes in grammar and punctuation. You should proofread only after you have finished all of your other editing revisions.</p>
-            </div>
-          )}
-        />
+       
       </div>
     </div>
   );

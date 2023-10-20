@@ -4,7 +4,7 @@ import React from "react";
 import ChevronDown from "@heroicons/react/24/outline/ChevronDownIcon";
 
 import ReviseAndReviewHeroImage from "../assets/revise-review-hero.png";
-
+import Legal from "../assets/Legal.png"
 interface AccordionProps {
   title: string;
   open?: boolean;
@@ -33,7 +33,7 @@ const Accordion = ({open = false, title, body}: AccordionProps): JSX.Element => 
       <div className={`transition-all overflow-hidden ${openDefault ? "py-2 h-full" : "h-0 py-0"}`}>
         <ul className="list-disc list-inside">
           {body.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li  key={index} className="py-4">{item}</li>
           ))}
         </ul>
       </div>
@@ -43,11 +43,11 @@ const Accordion = ({open = false, title, body}: AccordionProps): JSX.Element => 
 
 const ReviseAndReview = (): JSX.Element => {
   return (
-    <div style={{
-      height: "185vh",
+    <div className="my-20" style={{
+      height: "140vh",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
-      backgroundImage: `url(${ReviseAndReviewHeroImage.src})`,
+      backgroundImage: `url(${Legal.src})`,
     }}>
       <div className="inset-0 flex flex-col gap-4 md:w-7/12 px-2 sm:px-16 py-8 sm:py-24">
         <div className="flex flex-col leading-1 text-center sm:text-left">
@@ -55,7 +55,7 @@ const ReviseAndReview = (): JSX.Element => {
           <p className="text-primary text-3xl sm:text-4xl font-extrabold">Unparalleled Expertise in Document Revision and Review</p>
         </div>
 
-        <div className="text-white text-xl sm:text-lg text-center sm:text-left">
+        <div className="text-white text-xl mb-12 mt-4 sm:text-lg text-center sm:text-left">
           With our expertise, you can proceed with confidence,
           knowing that your documents are legally sound and error-free.
         </div>

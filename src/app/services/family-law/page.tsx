@@ -4,12 +4,13 @@ import React from "react";
 
 import Layout from "../_layout";
 
-import HeroBackground from "../../../assets/hero-background.png";
+import FLImage from "../../../assets/FLImage.png"
+
 
 const FamilyLaw = () => {
   return (
     <Layout
-      heroImage={HeroBackground}
+    backgroundImage={FLImage}
       headingText="Family Law"
     />
   );

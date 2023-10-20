@@ -6,8 +6,9 @@ import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import XCircleIcon from "@heroicons/react/24/solid/XCircleIcon";
 
 import Logo from "../assets/logo.png";
-import HeroPicture from "../assets/hero-image.png";
-import HeroBackground from "../assets/hero-background.png";
+
+
+import LawLady from "../assets/LawLady.jpg"
 
 import SoLaw from "../assets/so-law.png";
 import SoStore from "../assets/so-store.png";
@@ -40,31 +41,28 @@ const Card = ({backgroundImage, description}: CardProps): JSX.Element => {
 const NewHeading = (): JSX.Element => {
   return (
     <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 sm:pb-0 px-2 md:px-16 gap-4 sm:gap-2 bg-nude" style={{
-      background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${HeroBackground.src})`,
+      background: ` url(${LawLady.src})`,
     }}>
       <NavBar />
-      <div className="flex flex-grow">
+      <div className="flex flex-grow pt-12 pb-24 ">
         <div className="flex flex-col md:w-1/2 gap-6 justify-center">
-          <div>
+          <div >
             <h6 className={caveat.className + " " + "text-6xl text-primary"} style={{transform: "rotate(-7.96deg)", zIndex: "0", lineHeight: "50px", width: "max-content", marginBottom: "-15px"}}>We are</h6>
-            <p className={mullish.className + " " + "text-5xl sm:text-6xl font-extrabold"}>
+            <p className={mullish.className + " " + "text-5xl  sm:text-6xl font-extrabold"}>
               Your <span className="text-secondary">Trusted</span> Legal Partner in Lagos
             </p>
           </div>
 
-          <p>
+          <p className="py-6">
             We are dedicated to simplifying legal complexities.
             Our team of experts is here to guide you through every step,
             providing efficient and cost-effective solutions to your legal needs.
           </p>
 
-          <button className="bg-gray-50 text-black w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
+          <button className="bg-gray-50 font-extrabold text-blueE w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
         </div>
 
-        <div className="hidden lg:flex w-1/2 justify-end">
-          <Image src={HeroPicture} alt="Hero picture" height={500} width={470} />
-        </div>
-
+       
       </div>
     </div>
   );

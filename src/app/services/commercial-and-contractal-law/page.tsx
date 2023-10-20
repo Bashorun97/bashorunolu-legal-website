@@ -3,13 +3,15 @@
 import React from "react";
 
 import Layout from "../_layout";
+import CCLImage from "../../../assets/CCLImage.png"
 
-import HeroBackground from "@/src/assets/hero-background.png";
+
+
 
 const CommercialAndContractalLaw = () => {
   return (
     <Layout
-      heroImage={HeroBackground}
+    backgroundImage={CCLImage}
       headingText="Commercial and Contractal Law"
     />
   );

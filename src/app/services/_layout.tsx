@@ -10,19 +10,22 @@ import Postcard from "../components/Postcard";
 import PostCard from "../components/Postcard";
 import Accordion from "../components/accordion";
 
-import BookAppointmentBg from "../../assets/book-appointment-bg.png";
+import Appointment from "../../assets/Appointment.png";
 
 interface LayoutProps {
   headingText: string;
-  heroImage: StaticImageData;
+  backgroundImage: StaticImageData;
 }
 
-const Layout = ({heroImage, headingText}: LayoutProps) => {
+const Layout = ({backgroundImage, headingText}: LayoutProps) => {
   return (
     <div className="relative">
-      <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 h-96 md:pb-0 px-2 md:px-16 gap-4 md:gap-2 bg-nude" style={{
+      <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 h-96 md:pb-0 px-2 md:px-16 gap-4 md:gap-2" style={{
         height: "65vh",
-        background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${heroImage.src})`,
+       background:`url(${backgroundImage.src})`,
+       backgroundRepeat: "no-repeat",
+       backgroundPosition: "100% 0px",
+     
       }}>
         <NavBar />
         <div className="flex flex-col h-full pt-12 md:w-1/2 gap-1">
@@ -51,8 +54,8 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
                     Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
                   </p>
                   <div className="flex gap-2">
-                    <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
-                    <button className="border border-backgroundBlack px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
+                    <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
+                    <button className="border border-blueE px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
                   </div>
                 </div>
               )}
@@ -72,8 +75,8 @@ const Layout = ({heroImage, headingText}: LayoutProps) => {
                     Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
                   </p>
                   <div className="flex gap-2">
-                    <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
-                    <button className="border border-backgroundBlack px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
+                    <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
+                    <button className="border border-blueE px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
                   </div>
                 </div>
               )}
@@ -207,7 +210,7 @@ const BookAppointment = () => {
   return (
     <div className="flex flex-col gap-7 items-center justify-center" style={{
       height: "27rem",
-      background: `url(${BookAppointmentBg.src}) no-repeat center center`,
+      background: `url(${Appointment.src}) no-repeat center center`,
     }}>
       <h4 className="text-4xl text-center text-white font-extrabold">Book an Appointment With Us Today!</h4>
       <button className="bg-white px-6 py-3 rounded-md">Book an Appointment</button>

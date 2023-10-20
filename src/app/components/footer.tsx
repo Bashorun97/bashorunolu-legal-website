@@ -5,7 +5,7 @@ import Logo from "../../assets/logo.png";
 
 const Footer = (): JSX.Element => {
   return (
-    <div className="flex flex-col items-center justify-between py-8 px-2 sm:px-16 text-white bg-gradient-to-b from-backgroundBlack to-black">
+    <div className="flex flex-col items-center justify-between py-16 px-2 sm:px-16 text-white  bg-footerColor">
       <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 w-full">
         <div className="flex flex-col gap-6">
           <div className="flex gap-2 items-center">
@@ -41,7 +41,7 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="border border-backgroundWhite border-opacity-10 mb-1 w-8/12"></div>
+      <div className="border border-backgroundWhite border-opacity-10 my-10 w-8/12"></div>
       <p>© 2023 OLU BASHORUN & CO</p>
     </div>
   );
