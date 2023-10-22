@@ -3,10 +3,10 @@
 import React from "react";
 import Image from "next/image";
 
-import { StaticImageData } from "next/image";
-import NavBar from "../components/NavBar";
-import Footer from "../components/footer";
 import CLP from "../../assets/CLP.png";
+import Footer from "../components/footer";
+import NavBar from "../components/NavBar";
+import { StaticImageData } from "next/image";
 
 
 interface LayoutProps {
@@ -17,13 +17,10 @@ interface LayoutProps {
 const Contact = ({ backgroundImage, headingText }: LayoutProps) => {
   return (
     <div className="">
-      <div
-        className=" bg-blueE bg-cover  text-white h-96 pt-2 px-16"
-       
-      >
+      <div className=" bg-blueE bg-cover text-white flex flex-col py-4 h-72 px-16">
         <NavBar />
-        <div className="pt-20">
-          <h1 className="text-6xl font-bold pt-8">Contact Us</h1>
+        <div className="h-full flex flex-col justify-center">
+          <h1 className="text-6xl font-bold">Contact Us</h1>
         </div>
       </div>
 
@@ -33,36 +30,36 @@ const Contact = ({ backgroundImage, headingText }: LayoutProps) => {
             <h1 className="text-3xl font-bold text-blueE ">Send Us a Message</h1>
           </div>
           <div>
-            <form>
-              <div className="flex flex-col pb-2">
-                <label className="">Full Name</label>
-                <input className="border my-1 py-2 pl-2 pr-48 rounded-md  " type="text" placeholder="Full Name" />
+            <form className="flex flex-col gap-4">
+
+              <div className="flex flex-col">
+                <label className="font-semibold">Full Name</label>
+                <input className="border my-1 py-2 pl-2 pr-48 rounded-md outline-none" type="text" placeholder="Full Name" />
               </div>
               <div className="flex flex-col">
-                <label>Email Adresss</label>
-                <input  className="border my-1 py-2 pl-2 pr-48 rounded-md  " type="text" placeholder="Email Address" />
+                <label className="font-semibold">Email Adresss</label>
+                <input className="border my-1 py-2 pl-2 pr-48 rounded-md outline-none" type="text" placeholder="Email Address" />
               </div>
               <div className="flex flex-col">
-                <label>Phone Number (Optional)</label>
-                <input  className="border my-1 py-2 pl-2 pr-48 rounded-md  " type="number" placeholder="Phone Number" />
+                <label className="font-semibold">Phone Number (Optional)</label>
+                <input className="border my-1 py-2 pl-2 pr-48 rounded-md outline-none" type="tel" placeholder="Phone Number" />
               </div>
               <div className="flex flex-col">
-                <label>Your Message</label>
-                <textarea name="message"  className="border my-1 pt-2 pb-20 pl-2 pr-48 rounded-md " >Type your message</textarea>
+                <label className="font-semibold">Your Message</label>
+                <textarea name="message" className="border my-1 pt-2 pb-20 pl-2 pr-48 rounded-md outline-none" placeholder="Type your message"></textarea>
               </div>
-              <div>
-                <button type="submit" className="bg-blueE py-4 px-44 rounded-md text-white text-bold mt-8 text-[1.5rem]">Submit</button>
-              </div>
+
+              <button type="submit" className="bg-blueE py-4 px-44 rounded-md text-white text-bold mt-8 text-[1.5rem]">Submit</button>
             </form>
+
           </div>
         </div>
         <div>
-            <Image src={CLP} alt="CLP" width={500} />
-       
+          <Image src={CLP} alt="CLP" width={500} />
         </div>
       </div>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
