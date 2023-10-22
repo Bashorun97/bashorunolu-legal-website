@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Service = () => {
+const Services = (): JSX.Element => {
   return (
     <div>
       
     </div>
-  )
+  );
 }
 
 export default Services;

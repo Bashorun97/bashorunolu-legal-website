@@ -105,7 +105,7 @@ const Heading = (): JSX.Element => {
       </div>
 
       <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 sm:pb-0 px-2 md:px-16 gap-4 sm:gap-2 bg-nude" style={{
-        background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${HeroBackground.src})`,
+        background: `linear-gradient(#5b576be3 0%, #5b576bcf 100%), url(${LawLady.src})`,
       }}>
 
         <div className="flex py-2 w-full justify-between items-center">
@@ -170,10 +170,6 @@ const Heading = (): JSX.Element => {
             </p>
 
             <button className="bg-gray-50 text-black w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
-          </div>
-
-          <div id="hero-picture" className="flex w-1/2 justify-end">
-            <Image src={HeroPicture} alt="Hero picture" height={500} width={470} />
           </div>
 
         </div>

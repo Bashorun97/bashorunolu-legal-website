@@ -6,15 +6,9 @@ import Image from "next/image";
 import CLP from "../../assets/CLP.png";
 import Footer from "../components/footer";
 import NavBar from "../components/NavBar";
-import { StaticImageData } from "next/image";
 
 
-interface LayoutProps {
-  headingText: string;
-  backgroundImage: StaticImageData;
-}
-
-const Contact = ({ backgroundImage, headingText }: LayoutProps) => {
+const Contact = (): JSX.Element => {
   return (
     <div className="">
       <div className=" bg-blueE bg-cover text-white flex flex-col py-4 h-72 px-16">

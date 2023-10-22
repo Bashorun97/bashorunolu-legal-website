@@ -11,13 +11,9 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-FROM node:18-alpine AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
-
 ENV NEXT_TELEMETRY_DISABLED 1
 
+COPY . .
 RUN yarn build
 
 FROM node:18-alpine AS runner
