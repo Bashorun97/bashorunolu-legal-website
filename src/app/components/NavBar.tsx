@@ -2,6 +2,7 @@
 
 import React from "react";
 
+import Link from "next/link";
 import Image, {StaticImageData} from "next/image";
 import {useRouter, usePathname} from "next/navigation";
 
@@ -107,10 +108,10 @@ const NavBar = (): JSX.Element => {
         </div>
       </div>
       <div className="flex py-2 w-full justify-between items-center">
-        <div className="flex gap-4 items-center">
+        <Link href="/" className="flex gap-4 items-center">
           <Image src={Logo} alt="Logo" height={60} width={60} />
           <h3 className="font-bold text-xl">OLU BASHORUN & CO</h3>
-        </div>
+        </Link>
 
         {/** Mobile menu **/}
         <div id="mobile-menu" className="flex pr-1 lg:hidden">
