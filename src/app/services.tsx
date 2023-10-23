@@ -1,96 +1,106 @@
 import React from "react";
 
+import Link from "next/link";
 import {StaticImageData} from "next/image";
 
+import PLP from "../assets/PLP.png";
+import CLP from "../assets/CLP.png";
+import FL from "../assets/FL.png";
+import CCL from "../assets/CCL.png";
 import SoLaw from "../assets/so-law.png";
 import SoStore from "../assets/so-store.png";
 import SoFamily from "../assets/so-family.png";
-import PLP from "../assets/PLP.png";
-import CLP from "../assets/CLP.png";
-import CCL from "../assets/CCL.png";
-import FL from "../assets/FL.png";
 
 interface CardProps {
   title: string;
-  description: Array<string>;
+  slug: string;
+  description: React.ReactNode;
   backgroundImage: StaticImageData;
 }
 
-const Card = ({title, backgroundImage, description}: CardProps): JSX.Element => {
+const Card = ({title, backgroundImage, slug, description}: CardProps): JSX.Element => {
   return (
-    <div className="flex flex-col justify-between mb-10 rounded-md px-4 py-6 w-[rem] " style={{
-      height: "40rem",
-      background: ` url(${backgroundImage.src})`,
+    <div className="flex flex-col gap-6 justify-between mb-10 rounded-md px-4 py-6 w-[rem] " style={{
       backgroundRepeat: "no-repeat",
-      
+      background: `url(${backgroundImage.src})`,
     }}>
-      <div className="flex flex-col leading-4 ml-6 mt-4">
-        <p className="text-secondary text-md font-semibold">We are experts at</p>
-        <p className="text-blueE font-bold text-2xl">{title}</p>
+      <div className="flex flex-col gap-8">
+        <div className="flex flex-col leading-4 ml-6 mt-4">
+          <p className="text-secondary text-md font-semibold">We are experts at</p>
+          <p className="text-blueE font-bold text-2xl">{title}</p>
+        </div>
+        {description}
       </div>
-      <ul className="list-disc list-inside ml-6">
-        {description.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-      <button className="bg-blueE ml-6 mb-6 text-white rounded-md w-32 py-3 px-4 hover:bg-gray-800">Learn More</button>
+      <Link href={`/services/${slug}`} className="bg-blueE text-center ml-6 mb-6 text-white rounded-md w-32 py-3 px-4 hover:bg-gray-800">Learn More</Link>
     </div>
   );
 }
 
 const Services = (): JSX.Element => {
   return (
-    <div className=" mx-16 ">
+    <div className="grid grid-cols-2 gap-4 px-14 bg-backgroundWhite">
       <Card
         backgroundImage={PLP}
         title="Property Law Practice (Conveyance Practice)"
-        description={[
-          "Sales of land",
-          "Public land acquisition and extinction processing",
-          "Lease and tenancies",
-          "Mortgages and charges",
-          "Wills and codicil",
-          "Probate practice",
-        ]}
+        slug="property-law-practice"
+        description={(
+          <ul className="list-disc list-inside ml-6">
+            <li>Sales of land</li>
+            <li>Public land acquisition and extinction processing</li>
+            <li>Lease and tenancies</li>
+            <li>Mortgages and charges</li>
+            <li>Wills and codicil</li>
+            <li>Probate practice</li>
+          </ul>
+        )}
       />
       <Card
         title="Corporate Law Practice"
+        slug="corporate-law-practice"
         backgroundImage={CLP}
-        description={[
-          "Company Promotion and Facilitation",
-          "Company Incorporation Processes",
-          "Post-incorporated matters",
-          "Formulation of Investment Agreements",
-          "Corporate Secretarial Services",
-          "Counsel for Collective Investment Schemes",
-          "Facilitation of Corporate Reorganisation including Arrangements and Compromises",
-          "External Restructuring via Mergers and Acquisitions",
-          "Corporate Litigation and Investment Dispute Resolution",
-        ]}
+        description={(
+          <ul className="list-disc list-inside ml-6">
+            <li>Company Promotion and Facilitation</li>
+            <li>Company Incorporation Processes</li>
+            <li>Post-incorporated matters</li>
+            <li>Formulation of Investment Agreements</li>
+            <li>Corporate Secretarial Services</li>
+            <li>Counsel for Collective Investment Schemes</li>
+            <li>Facilitation of Corporate Reorganisation including Arrangements and Compromises</li>
+            <li>External Restructuring via Mergers and Acquisitions</li>
+            <li>Corporate Litigation and Investment Dispute Resolution</li>
+          </ul>
+        )}
       />
       <Card
         title="Commercial and Contractual Law"
+        slug="commercial-and-contractal-law"
         backgroundImage={CCL}
-        description={[
-          "Drafting and Evaluating Hire Purchase Agreements",
-          "Profound Knowledge of Copyright Law",
-          "Focused Competence in Industrial Property Law",
-          "Skillful Handling of Trademark Law Matters",
-          "Consultation for Employment Law Matters",
-          "Establishing and Enforcing Legally Sound Contracts",
-        ]}
+        description={(
+          <ul className="list-disc list-inside ml-6">
+            <li>Drafting and Evaluating Hire Purchase Agreements</li>
+            <li>Profound Knowledge of Copyright Law</li>
+            <li>Focused Competence in Industrial Property Law</li>
+            <li>Skillful Handling of Trademark Law Matters</li>
+            <li>Consultation for Employment Law Matters</li>
+            <li>Establishing and Enforcing Legally Sound Contracts</li>
+          </ul>
+        )}
       />
 
       <Card
-        title="Litigation and Dispute Resolution"
+        title="Family Law"
+        slug="family-law"
         backgroundImage={FL}
-        description={[
-          "Divorce and Separation",
-          "Child Custody and Support",
-          "Spousal Support",
-          "Adoption",
-          "Prenuptial Agreements",
-        ]}
+        description={(
+          <ul className="list-disc list-inside ml-6">
+            <li>Divorce and Separation</li>
+            <li>Child Custody and Support</li>
+            <li>Spousal Support</li>
+            <li>Adoption</li>
+            <li>Prenuptial Agreements</li>
+          </ul>
+        )}
       />
     </div>
   );
