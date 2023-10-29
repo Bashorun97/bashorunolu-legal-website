@@ -6,12 +6,13 @@ import Image from "next/image";
 import CLP from "../../assets/CLP.png";
 import Footer from "../components/footer";
 import NavBar from "../components/NavBar";
+import SimpleMap from "../components/map";
 
 
 const Contact = (): JSX.Element => {
   return (
-    <div className="">
-      <div className=" bg-blueE bg-cover text-white flex flex-col py-4 h-72 px-16">
+    <div>
+      <div className=" bg-blueE bg-cover text-white flex flex-col my-20 h-72 px-16">
         <NavBar />
         <div className="h-full flex flex-col justify-center">
           <h1 className="text-6xl font-bold">Contact Us</h1>
@@ -49,10 +50,10 @@ const Contact = (): JSX.Element => {
           </div>
         </div>
         <div>
-          <Image src={CLP} alt="CLP" width={500} />
+          <SimpleMap />
         </div>
       </div>
-      <div>
+      <div className="mt-24">
         <Footer />
       </div>
     </div>

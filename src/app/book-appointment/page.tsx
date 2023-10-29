@@ -6,6 +6,7 @@ import Image from "next/image";
 import CLP from "../../assets/CLP.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/footer";
+import Calendly from "../components/calendly";
 
 const BookAppointment = (): JSX.Element => {
   return (
@@ -16,6 +17,10 @@ const BookAppointment = (): JSX.Element => {
           <h1 className="text-6xl font-bold">Schedule An Appointment</h1>
         </div>
       </div>
+
+      <div className="calendly-inline-widget overflow-hidden">
+      <Calendly />
+    </div>
       <div className="pt-40">
         <Footer />
       </div>
