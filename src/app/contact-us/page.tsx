@@ -12,14 +12,14 @@ import SimpleMap from "../components/map";
 const Contact = (): JSX.Element => {
   return (
     <div>
-      <div className=" bg-blueE bg-cover text-white flex flex-col my-20 h-72 px-16">
+      <div className=" bg-blueE bg-cover text-white flex flex-col py-4 h-72 px-16">
         <NavBar />
         <div className="h-full flex flex-col justify-center">
           <h1 className="text-6xl font-bold">Contact Us</h1>
         </div>
       </div>
 
-      <div className="flex justify-evenly py-16 px-16 gap-32">
+      <div className="flex justify-evenly my-24 px-16 gap-32">
         <div className="flex flex-col ">
           <div className="mb-4">
             <h1 className="text-3xl font-bold text-blueE ">Send Us a Message</h1>
@@ -53,7 +53,7 @@ const Contact = (): JSX.Element => {
           <SimpleMap />
         </div>
       </div>
-      <div className="mt-24">
+      <div>
         <Footer />
       </div>
     </div>
