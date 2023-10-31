@@ -1,4 +1,7 @@
 import React from "react";
+
+import Link from "next/link";
+
 import ChevronDown from "@heroicons/react/24/outline/ChevronDownIcon";
 
 
@@ -70,7 +73,7 @@ const FAQ = (): JSX.Element => {
             <div className="flex flex-col gap-4">
               <p>Consultation can be scheduled based on its suitability; appointment booking via the available form on the page, email (olu.bash.law@gmail.com) or phone</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+                <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
@@ -84,7 +87,7 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>The initial Consultation fee being relevant if it is premised on any basis that has a utility value, the fee which will be decided subsequent to the initial contact.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
@@ -97,7 +100,7 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>Billing is handled via subject specifics and transactional value, the channel being dependent on the aforementioned.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
@@ -110,7 +113,7 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>There are upfront fees for document review and drafting, a 40% deposit and the rest on completion.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
@@ -123,7 +126,7 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>Yes, we’d oblige you with a quotation bearing the cost of services upon request.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
@@ -136,7 +139,7 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>There is Pro Bono service and this is inextricably linked to individual cases.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
@@ -149,16 +152,12 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>There is a dedicated section of the page for these, bearing the testimonials of a myriad of clients and partners we have worked with from the incipience of this establishment.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
           )}
         />
-
-       
-
-       
 
         <Accordion
           title="Do you offer virtual or remote consultations for clients who cannot visit your office in person?"
@@ -166,7 +165,7 @@ const FAQ = (): JSX.Element => {
             <div  className="flex flex-col gap-4">
               <p>A significant majority of undertakings are primarily by virtual or remote consultations, and physical or onsite appointment when necessary.</p>
               <div className="flex gap-2">
-                <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</button>
+              <Link href="/book-for-appointment" className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">BOOK AN APPOINTMENT</Link>
                 <button className="border-2 border-blueE px-5 py-3 rounded-md hover:bg-gray-100">CONTACT ME</button>
               </div>
             </div>
