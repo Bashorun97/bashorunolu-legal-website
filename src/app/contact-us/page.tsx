@@ -7,6 +7,11 @@ import CLP from "../../assets/CLP.png";
 import Footer from "../components/footer";
 import NavBar from "../components/NavBar";
 import SimpleMap from "../components/map";
+import  MapPinIcon from "@heroicons/react/24/outline/MapPinIcon";
+import  PhoneIcone from "@heroicons/react/24/outline/PhoneIcon";
+import  EnvelopeIcon from "@heroicons/react/24/outline/EnvelopeIcon";
+
+
 
 
 const Contact = (): JSX.Element => {
@@ -37,7 +42,7 @@ const Contact = (): JSX.Element => {
               </div>
               <div className="flex flex-col">
                 <label className="font-semibold">Phone Number (Optional)</label>
-                <input className="border my-1 py-2 pl-2 pr-48 rounded-md outline-none" type="tel" placeholder="Phone Number" />
+                <input className="border  my-1 py-2 pl-2 pr-48 rounded-md outline-none" type="tel" placeholder="Phone Number" />
               </div>
               <div className="flex flex-col">
                 <label className="font-semibold">Your Message</label>
@@ -51,6 +56,12 @@ const Contact = (): JSX.Element => {
         </div>
         <div>
           <SimpleMap />
+          <div className="bg-blueE py-6 rounded-b-lg text-white" style={{backgroundColor:""}}>
+            <p className="flex items-center pl-2 py-2"> <MapPinIcon className="w-6 mr-2 text-primary"/>Sangotedo, Eti-Osa, <br/> Lagos State,<br/> Nideria. </p>
+            <p  className="flex items-center  pl-2 py-2"><PhoneIcone className="w-6 mr-2 text-primary"/> (234)7042871925 </p>
+            <p  className="flex items-center  pl-2 py-2"><EnvelopeIcon className="w-6 mr-2 text-primary"/> johndoe@example.com</p>
+
+          </div>
         </div>
       </div>
       <div>

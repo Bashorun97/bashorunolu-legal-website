@@ -12,7 +12,7 @@ export default function SimpleMap() {
   };
 
   return (
-    <div style={{ height: '80vh', width: '30vw' }}>
+    <div className="rounded-t-lg overflow-hidden" style={{ height: '50vh', width: '30vw' }}>
       <GoogleMapReact
         defaultZoom={defaultProps.zoom}
         defaultCenter={defaultProps.center}

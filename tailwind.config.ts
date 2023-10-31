@@ -18,7 +18,8 @@ const config: Config = {
         blogHeadingBg: "#13294B",
         topPosts:"#0F213C",
         blueE: "#00407B",
-        footerColor: "#001426"
+        footerColor: "#001426",
+        contact:"#454655"
         
       },
       backgroundImage: {
