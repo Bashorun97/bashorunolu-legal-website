@@ -15,7 +15,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({children}: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={mulish.className}>{children}</body>
     </html>
   );

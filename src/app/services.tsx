@@ -38,7 +38,7 @@ const Card = ({title, backgroundImage, slug, description}: CardProps): JSX.Eleme
 
 const Services = (): JSX.Element => {
   return (
-    <div className="grid grid-cols-2 gap-4 px-14 bg-backgroundWhite">
+    <div id="our-services" className="grid grid-cols-2 gap-4 px-14 bg-backgroundWhite">
       <Card
         backgroundImage={PLP}
         title="Property Law Practice (Conveyance Practice)"
