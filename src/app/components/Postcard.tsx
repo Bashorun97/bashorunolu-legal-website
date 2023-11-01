@@ -1,14 +1,17 @@
 import React from "react";
 
 import {useRouter, usePathname} from "next/navigation";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
 
 interface PostCardProps {
   title: string;
   route?: string;
   description: string;
+  image: StaticImageData;
 }
 
-const PostCard = ({route = "/blog/1"}: PostCardProps): JSX.Element => {
+const PostCard = ({route = "/blog/1" , title, description,image}: PostCardProps): JSX.Element => {
 
   const router = useRouter();
 
@@ -18,7 +21,11 @@ const PostCard = ({route = "/blog/1"}: PostCardProps): JSX.Element => {
 
   return (
     <div onClick={onClick} className="flex flex-col cursor-pointer h-full bg-cardBackground overflow-hidden rounded-lg">
-      <div className="bg-red-400 flex-grow" style={{minHeight: "15rem"}}></div>
+      <div className=" flex-grow" style={{minHeight: "15rem"}}>
+      <Image src={image} alt={title } className="" style={{
+            minHeight: "35vh"
+          }}/>
+      </div>
       <div className="flex flex-col gap-1 p-3">
         <h3 className="font-semibold text-md">Mask Pencil Vertical</h3>
         <p className="text-sm">

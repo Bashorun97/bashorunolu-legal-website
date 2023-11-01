@@ -5,6 +5,10 @@ import Footer from "../components/footer";
 import Navbar from "../components/NavBar";
 import PostCard from "../components/Postcard";
 import TopPost from "../components/TopPost";
+import BlogPost from "../components/TopPost";
+import Blog from "../../assets/Blog.png";
+import Blog1 from "../../assets/Blog1.png";
+import Blog2 from "../../assets/Blog2.png";
 
 const Page = () => {
   return (
@@ -14,25 +18,28 @@ const Page = () => {
         <h1 className="text-white font-extrabold text-6xl py-5">Blog</h1>
         <h4 className="text-primary font-extrabold text-2xl pt-2">Top Post</h4>
 
-
-        <div className="flex gap-3 pt-4">
-          <div className="flex-grow min-h-fit" style={{
-            minHeight: "70vh"
-          }}>
-            <TopPost
+        <div className="flex gap-3">
+          <div className="flex-grow h-full " style={{}}>
+            <BlogPost
+              image={Blog}
               title="Top"
               route="/blog/1"
               description="posts"
             />
           </div>
 
-          <div className="hidden lg:flex flex-col gap-3" style={{width: "22rem"}}>
+          <div
+            className="hidden lg:flex flex-col   gap-3"
+            style={{ width: "22rem" }}
+          >
             <TopPost
+              image={Blog1}
               title="Top"
               route="/blog/1"
               description="posts"
             />
             <TopPost
+              image={Blog2}
               title="Top"
               route="/blog/1"
               description="posts"
@@ -45,46 +52,55 @@ const Page = () => {
         <h4 className="text-2xl font-semibold">Other Posts</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 ">
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
           />
           <PostCard
+            image={Blog2}
             title="card"
             route="/blog/1"
             description="post cards"
