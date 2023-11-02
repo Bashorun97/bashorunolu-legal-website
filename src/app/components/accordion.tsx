@@ -43,13 +43,12 @@ interface AccordionProps {
   title: string;
   open?: boolean;
   body: React.ReactNode;
+  setOpen: () => void;
 }
 
-const Accordion = ({ open = false, title, body }: AccordionProps): JSX.Element => {
-  const [isOpen, setOpen] = useState(open);
-
+const Accordion = ({ open = false, title, body, setOpen }: AccordionProps): JSX.Element => {
   const onClick = () => {
-    setOpen(!isOpen);
+    setOpen();
   };
 
   return (
@@ -57,17 +56,17 @@ const Accordion = ({ open = false, title, body }: AccordionProps): JSX.Element =
       <div
         onClick={onClick}
         className={`py-3 text-lg flex justify-between cursor-pointer border-gray-300 ${
-          isOpen ? "border-b" : ""
+          open ? "border-b" : ""
         }`}
       >
         <div>{title}</div>
         <button
-          className={`origin-center ${isOpen ? "rotate-180" : "rotate-0"}`}
+          className={`origin-center ${open ? "rotate-180" : "rotate-0"}`}
         >
           <ChevronDown />
         </button>
       </div>
-      <div className={`transition-all overflow-hidden ${isOpen ? "py-2 h-full" : "h-0 py-0"}`}>
+      <div className={`transition-all overflow-hidden ${open ? "py-2 h-full" : "h-0 py-0"}`}>
         {body}
       </div>
     </div>

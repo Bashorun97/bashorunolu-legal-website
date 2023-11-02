@@ -9,7 +9,7 @@ import BlogPost from "../components/TopPost";
 import Blog from "../../assets/Blog.png";
 import Blog1 from "../../assets/Blog1.png";
 import Blog2 from "../../assets/Blog2.png";
-import { IBlog, fetchBlogs } from "@/src/repository/blog";
+import { IBlog, fetchBlogs } from "@/repository/blog";
 
 const Page = () => {
   const [blogPosts, setBlogPosts] = React.useState<IBlog[] | null>(null);

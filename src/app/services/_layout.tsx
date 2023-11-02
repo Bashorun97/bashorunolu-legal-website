@@ -7,12 +7,12 @@ import Link from "next/link";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/footer";
-import Postcard from "../components/Postcard";
 import PostCard from "../components/Postcard";
 import Accordion from "../components/accordion";
 
 import Blog2 from "../../assets/Blog2.png";
-import Appointment from "../../assets/Appointment.png";
+import Appointment from "@/assets/Appointment.png";
+import { IBlog, fetchBlogs } from "@/repository/blog";
 
 interface LayoutProps {
   headingText: string;
@@ -21,7 +21,17 @@ interface LayoutProps {
 }
 
 const Layout = ({ backgroundImage, headingText, faqItems }: LayoutProps) => {
-    const blogPost = [
+  const [currentFAQ, setCurrentFAQ] = React.useState<number>(0);
+  const [blogPosts, setBlogPosts] = React.useState<IBlog[] | null>(null);
+
+  React.useEffect(() => {
+    (async () => {
+      const res = await fetchBlogs();
+      setBlogPosts(res);
+    })();
+  }, []);
+
+  const blogPost = [
     {
       title: "Simple Post",
       route: "/blog/1",
@@ -75,10 +85,11 @@ const Layout = ({ backgroundImage, headingText, faqItems }: LayoutProps) => {
           <div className="flex flex-col rounded-lg bg-white gap-4 mx-2 md:mx-16 p-4">
             {faqItems.map((item, index) => (
               <Accordion
-                open
+                open={currentFAQ == index}
                 key={index}
                 body={item.body}
                 title={item.title}
+                setOpen={() => setCurrentFAQ(index)}
               />
             ))}
           </div>
@@ -87,72 +98,17 @@ const Layout = ({ backgroundImage, headingText, faqItems }: LayoutProps) => {
             <h4 className="text-2xl font-semibold">Related Posts</h4>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <PostCard
-                image={Blog2}
-                title="Mask Pencil Vertical"
-                route="/blog/1"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-              />
-
-              <PostCard
-                image={Blog2}
-                title="Mask Pencil Vertical"
-                route="/blog/1"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-              />
-              <PostCard
-                image={Blog2}
-                title="Mask Pencil Vertical"
-                route="/blog/1"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-              />
-
-              <PostCard
-                image={Blog2}
-                title="Mask Pencil Vertical"
-                route="/blog/1"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-              />
-
-              <PostCard
-                image={Blog2}
-                title="Mask Pencil Vertical"
-                route="/blog/1"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-              />
-
-              <PostCard
-                image={Blog2}
-                title="Mask Pencil Vertical"
-                route="/blog/1"
-                description={`
-                  Proofreading is the final stage of the editing process,
-                  focusing on surface errors such as misspellings and mistakes
-                  in grammar and punctuation.
-                `}
-              />
-
+              {blogPosts?.map(((item, index) => (
+                <PostCard
+                  key={index}
+                  image={Blog2}
+                  title={item.title}
+                  route={`/blog/${item.slug}`}
+                  description={item.description}
+                />
+              )))}
             </div>
+
           </div>
 
           <div id="footer">
@@ -178,7 +134,7 @@ const BookAppointment = () => {
       background: `url(${Appointment.src}) no-repeat center center`,
     }}>
       <h4 className="text-4xl text-center text-white font-extrabold">Book an Appointment With Us Today!</h4>
-      <Link  href="/book-appointment" className="bg-white px-6 py-3 rounded-md">Book an Appointment</Link>
+      <Link href="/book-appointment" className="bg-white px-6 py-3 rounded-md">Book an Appointment</Link>
     </div>
   );
 };

@@ -1,20 +1,12 @@
 "use client";
 
 import React from "react";
+
 import Link from "next/link";
 
 import Layout from "../_layout";
-
-import HeroBackground from "../../../assets/hero-background.png";
 import PLPImage from "../../../assets/PLPImage.png";
-import CCLImage from "../../../assets/CCLImage.png";
-import Footer from "../../components/footer";
 
-import PostCard from "../../components/Postcard";
-import Accordion from "../../components/accordion";
-
-import Appointment from "../../assets/Appointment.png";
-import Blog2 from "../../../assets/Blog2.png";
 
 const PropertyLawPractice = () => {
   return (

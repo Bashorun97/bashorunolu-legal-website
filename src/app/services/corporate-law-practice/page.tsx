@@ -2,19 +2,11 @@
 
 import React from "react";
 
-import Layout from "../_layout";
-
-import CLPImage from "../../../assets/CLPImage.png";
-import BookAppointment from "../_layout";
 import Link from "next/link";
-import CCLImage from "../../../assets/CCLImage.png";
-import Footer from "../../components/footer";
-import Postcard from "../../components/Postcard";
-import PostCard from "../../components/Postcard";
-import Accordion from "../../components/accordion";
-import Blog2 from "../../../assets/Blog2.png";
 
-import Appointment from "../../assets/Appointment.png";
+import Layout from "../_layout";
+import CLPImage from "../../../assets/CLPImage.png";
+
 
 const CorporateLawPractice = () => {
   return (
