@@ -23,7 +23,7 @@ const Accordion = ({ open = false, title, body }: AccordionProps): JSX.Element =
   };
 
   return (
-    <div className="text-black border border-gray-300 rounded-md px-4 py-1">
+    <div id="faq" className="text-black border border-gray-300 rounded-md px-4 py-1">
       <div onClick={onClick} className={`py-3 text-lg flex justify-between cursor-pointer border-gray-300 ${openDefault ? "border-b" : ""}`}>
         <div >{title}</div>
         <button onClick={onClick} className={`origin-center ${openDefault ? "rotate-180" : "rotate-0"}`}>

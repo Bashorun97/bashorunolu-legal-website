@@ -32,7 +32,7 @@ const ReviseAndReview = (): JSX.Element => {
   const [currentAccordion, setCurrentAccordion] = React.useState<number>(0);
 
   return (
-    <div className="my-20" style={{
+    <div id="reviseAndReview" className="my-20" style={{
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundImage: `url(${Legal.src})`,

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import Logo from "../../assets/logo.png";
 
@@ -25,19 +26,19 @@ const Footer = (): JSX.Element => {
         <div className="flex flex-grow gap-4 sm:gap-10 w-full sm:w-min">
           <div className="flex flex-col w-1/2">
             <p className="mb-2 font-extrabold">Links</p>
-            <a className="mb-4">Contact us</a>
-            <a className="mb-4">Schedule an appointment</a>
-            <a className="mb-4">Blog</a>
-            <a className="mb-4">FAQ</a>
-            <a className="mb-4">Testimonials</a>
-            <a className="mb-4">Legal Process Review</a>
+            <Link href="/contact-us" className="mb-4">Contact us</Link>
+            <Link href="/book-appointment" className="mb-4">Schedule an appointment</Link>
+            <Link href="/blog" className="mb-4">Blog</Link>
+            <Link href="/#<faq-id>" className="mb-4">FAQ</Link>
+            <Link href="/#<reviseAndReview-id>" className="mb-4">Testimonials</Link>
+            <Link href="/#<reviseAndReview-id>" className="mb-4">Legal Process Review</Link>
           </div>
           <div className="flex flex-col w-1/2">
             <p className="mb-2 font-extrabold">Services</p>
-            <a className="mb-4">Property Law Practice (Conveyance Practice)</a>
-            <a className="mb-4">Corporate Law practice</a>
-            <a className="mb-4">Commercial and Contractual Law</a>
-            <a className="mb-4">Family Law</a>
+            <Link href="/services/property-law-practice" className="mb-4">Property Law Practice (Conveyance Practice)</Link>
+            <Link href="/services/corporate-law-practice" className="mb-4">Corporate Law practice</Link>
+            <Link href="/services/commercial-and-contractual-law" className="mb-4">Commercial and Contractual Law</Link>
+            <Link href="/services/family-law" className="mb-4">Family Law</Link>
           </div>
         </div>
       </div>
