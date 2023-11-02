@@ -6,6 +6,7 @@ import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import XCircleIcon from "@heroicons/react/24/solid/XCircleIcon";
 
 import Logo from "../assets/logo.png";
+import Link from "next/link";
 
 
 import LawLady from "../assets/LawLady.jpg"
@@ -59,7 +60,7 @@ const NewHeading = (): JSX.Element => {
             providing efficient and cost-effective solutions to your legal needs.
           </p>
 
-          <button className="bg-gray-50 font-extrabold text-blueE w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
+          <Link href="/contact-us" className="bg-gray-50 font-extrabold text-blueE w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</Link>
         </div>
 
        
@@ -169,7 +170,7 @@ const Heading = (): JSX.Element => {
               providing efficient and cost-effective solutions to your legal needs.
             </p>
 
-            <button className="bg-gray-50 text-black w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</button>
+            <Link href="/contact-us" className="bg-gray-50 text-black w-fit px-8 py-3 rounded-md hover:bg-gray-100">Contact us</Link>
           </div>
 
         </div>

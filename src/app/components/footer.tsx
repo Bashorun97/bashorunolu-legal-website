@@ -29,9 +29,9 @@ const Footer = (): JSX.Element => {
             <Link href="/contact-us" className="mb-4">Contact us</Link>
             <Link href="/book-appointment" className="mb-4">Schedule an appointment</Link>
             <Link href="/blog" className="mb-4">Blog</Link>
-            <Link href="/#<faq-id>" className="mb-4">FAQ</Link>
+            <Link href="/#faq" className="mb-4">FAQ</Link>
             <Link href="/#<reviseAndReview-id>" className="mb-4">Testimonials</Link>
-            <Link href="/#<reviseAndReview-id>" className="mb-4">Legal Process Review</Link>
+            <Link href="/#reviseAndReview" className="mb-4">Legal Process Review</Link>
           </div>
           <div className="flex flex-col w-1/2">
             <p className="mb-2 font-extrabold">Services</p>
