@@ -20,6 +20,36 @@ interface LayoutProps {
 }
 
 const Layout = ({ backgroundImage, headingText, faqItems }: LayoutProps) => {
+    const blogPost = [
+    {
+      title: "Simple Post",
+      route: "/blog/1",
+      description: `
+      Proofreading is the final stage of the editing process,
+      focusing on surface errors such as misspellings and mistakes
+      in grammar and punctuation.
+    `
+    },
+    {
+      title: "Simple Post",
+      route: "/blog/1",
+      description: `
+      Proofreading is the final stage of the editing process,
+      focusing on surface errors such as misspellings and mistakes
+      in grammar and punctuation.
+    `
+    },
+    {
+      title: "Simple Post",
+      route: "/blog/1",
+      description: `
+      Proofreading is the final stage of the editing process,
+      focusing on surface errors such as misspellings and mistakes
+      in grammar and punctuation.
+    `
+    }
+  ];
+
   return (
     <div className="relative">
       <div className="flex flex-col bg-cover justify-between bg-center text-white pt-2 pb-6 h-96 md:pb-0 px-2 md:px-16 gap-4 md:gap-2" style={{
