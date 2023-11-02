@@ -7,22 +7,37 @@ export default defineType({
   fields: [
     defineField({
       name: "title",
-      title: "Title of the post",
+      title: "Title",
       type: "string",
     }),
     defineField({
       name: "description",
-      title: "Description of the post",
+      title: "Description",
       type: "text",
     }),
     defineField({
       name: "image",
-      title: "Cover image of the post",
-      type: "text",
+      title: "Cover image",
+      type: 'image',
+      options: {
+        hotspot: true // <-- Defaults to false
+      },
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+        },
+        {
+          name: 'attribution',
+          type: 'string',
+          title: 'Attribution',
+        }
+      ]
     }),
     defineField({
       name: "slug",
-      title: "Description of the post",
+      title: "Slug",
       type: "slug",
       options: {
         source: 'title',

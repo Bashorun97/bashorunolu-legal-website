@@ -9,6 +9,7 @@ import Blog from "../../../assets/Blog.png";
 import Blog2 from "../../../assets/Blog2.png";
 
 const Effctive = () => {
+
   return (
     <div>
       <div className="px-20 py-4 pb-7 flex flex-col gap-8 bg-blogHeadingBg">
