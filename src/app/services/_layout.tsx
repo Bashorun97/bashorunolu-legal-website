@@ -3,6 +3,7 @@
 import React from "react";
 
 import { StaticImageData } from "next/image";
+import Link from "next/link";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/footer";
@@ -177,7 +178,7 @@ const BookAppointment = () => {
       background: `url(${Appointment.src}) no-repeat center center`,
     }}>
       <h4 className="text-4xl text-center text-white font-extrabold">Book an Appointment With Us Today!</h4>
-      <button className="bg-white px-6 py-3 rounded-md">Book an Appointment</button>
+      <Link  href="/book-appointment" className="bg-white px-6 py-3 rounded-md">Book an Appointment</Link>
     </div>
   );
 };
@@ -185,63 +186,3 @@ export default Layout;
 
 
 
-{/* <Accordion
-open
-title="What types of legal services do you provide"
-body={(
-  <div className="flex flex-col gap-4">
-    <p>
-      I offer a comprehensive range of legal services spanning multiple practice areas.
-      In Property Law Practice, we provide services including initial inquiry and assessment, title deduction and investigation, final conveyance processes, and post-completion procedures.
-      We also handle public land acquisition, lease and tenancy matters, mortgages, and charges, offering guidance on mortgages, property valuation, and more.
-      In addition, we specialize in wills, codicils, and probate practice, assisting with estate law administration.
-      Our Corporate Law Practice covers company promotion, incorporation, investment agreements, corporate secretarial services, and corporate reorganization, including mergers and acquisitions.
-      Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
-    </p>
-    <div className="flex gap-2">
-      <button className="bg-blueE text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
-      <button className="border border-blueE px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
-    </div>
-  </div>
-)}
-/>
-
-<Accordion
-title="What types of legal services do you provide"
-body={(
-  <div className="flex flex-col gap-4">
-    <p>
-      I offer a comprehensive range of legal services spanning multiple practice areas.
-      In Property Law Practice, we provide services including initial inquiry and assessment, title deduction and investigation, final conveyance processes, and post-completion procedures.
-      We also handle public land acquisition, lease and tenancy matters, mortgages, and charges, offering guidance on mortgages, property valuation, and more.
-      In addition, we specialize in wills, codicils, and probate practice, assisting with estate law administration.
-      Our Corporate Law Practice covers company promotion, incorporation, investment agreements, corporate secretarial services, and corporate reorganization, including mergers and acquisitions.
-      Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
-    </p>
-    <div className="flex gap-2">
-      <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
-      <button className="border border-backgroundBlack px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
-    </div>
-  </div>
-)}
-/>
-
-<Accordion
-title="What types of legal services do you provide"
-body={(
-  <div className="flex flex-col gap-4">
-    <p>
-      I offer a comprehensive range of legal services spanning multiple practice areas.
-      In Property Law Practice, we provide services including initial inquiry and assessment, title deduction and investigation, final conveyance processes, and post-completion procedures.
-      We also handle public land acquisition, lease and tenancy matters, mortgages, and charges, offering guidance on mortgages, property valuation, and more.
-      In addition, we specialize in wills, codicils, and probate practice, assisting with estate law administration.
-      Our Corporate Law Practice covers company promotion, incorporation, investment agreements, corporate secretarial services, and corporate reorganization, including mergers and acquisitions.
-      Lastly, in Commercial and Contractual Law, we excel in drafting agreements, copyright, industrial property law, trademark matters, employment law consultations, and contract establishment and enforcement.
-    </p>
-    <div className="flex gap-2">
-      <button className="bg-backgroundBlack text-white px-5 py-3 rounded-md hover:bg-gray-800">View all services</button>
-      <button className="border border-backgroundBlack px-5 py-3 rounded-md hover:bg-gray-100">Contact me</button>
-    </div>
-  </div>
-)}
-/> */}
