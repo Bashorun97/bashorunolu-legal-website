@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useRef } from "react";
@@ -8,19 +7,17 @@ import SimpleMap from "../components/map";
 import MapPinIcon from "@heroicons/react/24/outline/MapPinIcon";
 import PhoneIcon from "@heroicons/react/24/outline/PhoneIcon";
 import EnvelopeIcon from "@heroicons/react/24/outline/EnvelopeIcon";
-import CLP from "../../assets/CLP.png";
 import Footer from "../components/footer";
 
 const Contact = (): JSX.Element => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_ypxixgp', 'sample_template', form.current, 'u2doYx3tppTYiqQyA')
+    emailjs.sendForm('service_ypxixgp', 'sample_template', form.current!, 'u2doYx3tppTYiqQyA')
       .then((result) => {
-        console.log(result.text);
-        form.current.reset(); // Reset the form after submission
+        form.current!.reset(); // Reset the form after submission
       })
       .catch((error) => {
         console.error(error.text);

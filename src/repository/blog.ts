@@ -2,13 +2,13 @@ import {client} from "./index";
 
 export type IBlog = {
   _id: string;
-  title: string;
-  description: string;
-  image: string;
   slug: string;
+  title: string;
+  image: string;
+  description: string;
 }
 
-export const fetchBlogs = async (): Promise<Blog[]> => {
+export const fetchBlogs = async (): Promise<IBlog[]> => {
   const q = `*[_type == "Blog"]{
     _id,
     title,
@@ -17,5 +17,5 @@ export const fetchBlogs = async (): Promise<Blog[]> => {
     "image": image.asset->url
   }`
 
-  return await client.fetch<Blog[]>(q)
+  return await client.fetch<IBlog[]>(q)
 }
