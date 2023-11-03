@@ -61,9 +61,16 @@ const Contact = (): JSX.Element => {
             </form>
           </div>
         </div>
-        <div>
-          <SimpleMap />
-          <div className="bg-blueE py-6 rounded-b-lg text-white">
+        <div className="flex flex-col">
+          <div className="relative">
+            <div className="absolute rounded-t-lg overflow-hidden w-full h-full z-50" style={{
+              background: "linear-gradient(0deg, rgb(0 64 123 / 91%) 0%, rgb(0 212 255 / 0%) 30%)"
+            }}></div>
+            <SimpleMap />
+          </div>
+          <div className="bg-blueE p-4 rounded-b-lg text-white" style={{
+            background: "linear-gradient(180deg, rgb(0 64 123 / 90%) 0%, rgb(0 64 123 / 100%) 100%)"
+          }}>
             <p className="flex items-center pl-2 py-2"><MapPinIcon className="w-6 mr-2 text-primary" />Sangotedo, Eti-Osa, <br /> Lagos State,<br /> Nigeria. </p>
             <p className="flex items-center pl-2 py-2"><PhoneIcon className="w-6 mr-2 text-primary" /> (234)7042871925 </p>
             <p className="flex items-center pl-2 py-2"><EnvelopeIcon className="w-6 mr-2 text-primary" /> johndoe@example.com</p>
