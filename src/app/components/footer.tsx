@@ -20,7 +20,7 @@ const Footer = (): JSX.Element => {
             <p>Nigeria.</p>
           </div>
 
-          <div>call: (234) 7042871925</div>
+          <Link href="tel:+2347042871925">call: (234) 7042871925</Link>
         </div>
 
         <div className="flex flex-grow gap-4 sm:gap-10 w-full sm:w-min">
@@ -30,7 +30,7 @@ const Footer = (): JSX.Element => {
             <Link href="/book-appointment" className="mb-4">Schedule an appointment</Link>
             <Link href="/blog" className="mb-4">Blog</Link>
             <Link href="/#faq" className="mb-4">FAQ</Link>
-            <Link href="/#<reviseAndReview-id>" className="mb-4">Testimonials</Link>
+            {/* <Link href="/#<reviseAndReview-id>" className="mb-4">Testimonials</Link> */}
             <Link href="/#reviseAndReview" className="mb-4">Legal Process Review</Link>
           </div>
           <div className="flex flex-col w-1/2">

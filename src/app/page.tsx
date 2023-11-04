@@ -3,10 +3,10 @@
 import React from "react";
 
 import FAQ from "./faq";
-import Footer from "./components/footer";
 import Heading from "./heading";
 import Mission from "./mission";
 import Services from "./services";
+import Footer from "./components/footer";
 import ReviseAndReview from "./reviseAndReview";
 
 

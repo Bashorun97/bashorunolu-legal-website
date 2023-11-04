@@ -3,8 +3,8 @@
 import React from "react";
 
 import Link from "next/link";
-import Image, {StaticImageData} from "next/image";
-import {useRouter, usePathname} from "next/navigation";
+import Image, { StaticImageData } from "next/image";
+import { useRouter, usePathname } from "next/navigation";
 
 import Bars3Icon from "@heroicons/react/24/outline/Bars3Icon";
 import XCircleIcon from "@heroicons/react/24/solid/XCircleIcon";
@@ -102,9 +102,9 @@ const NavBar = (): JSX.Element => {
             </button>
           </div>
 
-          <div className="flex justify-center mt-2 bg-nude px-4 py-3 font-bold rounded-md">
-            call: 234 01234567890
-          </div>
+          <Link href="tel:+2347042871925" className="flex justify-center mt-2 bg-nude px-4 py-3 font-bold rounded-md">
+            call: (234) 7042871925
+          </Link>
         </div>
       </div>
       <div className="flex py-2 w-full justify-between items-center">
@@ -138,7 +138,7 @@ const NavBar = (): JSX.Element => {
 
             <div
               className="hidden group-hover:block absolute bg-transparent top-4 -left-60"
-              style={{width: "37rem"}}
+              style={{ width: "37rem" }}
             >
               <div className="grid grid-cols-2 mt-5 gap-3 p-2 w-full h-full rounded-lg bg-backgroundWhite">
                 <Card
@@ -183,9 +183,9 @@ const NavBar = (): JSX.Element => {
           </NavButton>
         </div>
 
-        <div className="hidden lg:block">
-          call: <span className="text-lg font-bold">(234) 01234567890</span>
-        </div>
+        <Link href="tel:+2347042871925" className="hidden lg:block">
+          call: <span className="text-lg font-bold">(234) 7042871925</span>
+        </Link>
       </div>
     </div>
   );

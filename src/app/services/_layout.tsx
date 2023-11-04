@@ -71,10 +71,11 @@ const Layout = ({ backgroundImage, headingText, faqItems }: LayoutProps) => {
               {blogPosts?.map(((item, index) => (
                 <PostCard
                   key={index}
-                  image={Blog2}
+                  image={item.image}
                   title={item.title}
+                  summary={item.summary}
                   route={`/blog/${item.slug}`}
-                  description={item.description}
+                  dateCreated={item.createdAt}
                 />
               )))}
             </div>

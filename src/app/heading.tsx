@@ -99,9 +99,9 @@ const Heading = (): JSX.Element => {
             <button className="bg-nude px-4 py-3 rounded-md">Contact us</button>
           </div>
 
-          <div className="flex flex-grow justify-center items-end bg-red-300">
-            call: 234 01234567890
-          </div>
+          <Link href="tel:+2347042871925" className="flex flex-grow justify-center items-end bg-red-300">
+            call: (234) 7042871925
+          </Link>
         </div>
       </div>
 
@@ -152,7 +152,7 @@ const Heading = (): JSX.Element => {
             <NavButton>Contact us</NavButton>
           </div>
 
-          <div id="contact-us">call: <span className="text-lg font-bold">(234) 01234567890</span></div>
+          <div id="contact-us">call: <Link href="tel:+2347042871925" className="text-lg font-bold">(234) 7042871925</Link></div>
         </div>
 
         <div className="flex flex-grow">
