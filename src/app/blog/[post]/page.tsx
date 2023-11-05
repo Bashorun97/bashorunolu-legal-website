@@ -1,14 +1,26 @@
 "use client";
 
 import React from "react";
+
 import Image from "next/image";
-import NavBar from "../../components/NavBar";
-import PostCard from "../../components/Postcard";
-import Footer from "../../components/footer";
-import Blog from "../../../assets/Blog.png";
-import Blog2 from "../../../assets/Blog2.png";
+
+import Blog from "@/assets/Blog.png";
+import Footer from "@/app/components/footer";
+import NavBar from "@/app/components/NavBar";
+import PostCard from "@/app/components/Postcard";
+import { IBlog, fetchBlogs } from "@/repository/blog";
+
 
 const Effctive = () => {
+  const [blogPosts, setBlogPosts] = React.useState<IBlog[]>([]);
+
+  React.useEffect(() => {
+    (async () => {
+      const res = await fetchBlogs();
+
+      setBlogPosts(res);
+    })();
+  }, []);
 
   return (
     <div>
@@ -92,42 +104,16 @@ const Effctive = () => {
         <div className="flex flex-col gap-4 my-20 px-20">
           <h4 className="text-2xl font-bold">Related Posts</h4>
           <div className="grid grid-cols-3 gap-4">
-            <PostCard
-              image={Blog2}
-              title="cards"
-              description="post cards"
-              route="/blog/effective-subtract-fill"
-            />
-            <PostCard
-              image={Blog2}
-              title="card"
-              description="post cards"
-              route="/blog/effective-subtract-fill"
-            />
-            <PostCard
-              image={Blog2}
-              title="card"
-              description="post cards"
-              route="/blog/effective-subtract-fill"
-            />
-            <PostCard
-              image={Blog2}
-              title="card"
-              description="post cards"
-              route="/blog/effective-subtract-fill"
-            />
-            <PostCard
-              image={Blog2}
-              title="card"
-              description="post cards"
-              route="/blog/effective-subtract-fill"
-            />
-            <PostCard
-              image={Blog2}
-              title="card"
-              description="post cards"
-              route="/blog/effective-subtract-fill"
-            />
+            {blogPosts.map((blog) => (
+              <PostCard
+                key={blog._id}
+                image={blog.image}
+                title={blog.title}
+                summary={blog.summary}
+                route={`/blog/${blog.slug}`}
+                dateCreated={blog.createdAt}
+              />
+            ))}
           </div>
         </div>
 

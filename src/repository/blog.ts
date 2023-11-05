@@ -27,5 +27,4 @@ export const fetchBlogs = async (): Promise<IBlog[]> => {
     ...blog,
     createdAt: new Date(blog.createdAt as unknown as string)
   })) as IBlog[];
-
 }

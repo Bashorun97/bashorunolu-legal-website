@@ -1,15 +1,17 @@
 "use client";
 
 import React from "react";
-import Footer from "../components/footer";
-import Navbar from "../components/NavBar";
-import PostCard from "../components/Postcard";
-import TopPost from "../components/TopPost";
-import BlogPost from "../components/TopPost";
-import Blog from "../../assets/Blog.png";
-import Blog1 from "../../assets/Blog1.png";
-import Blog2 from "../../assets/Blog2.png";
+
+import Blog from "@/assets/Blog.png";
+import Blog1 from "@/assets/Blog1.png";
+import Blog2 from "@/assets/Blog2.png";
+import Footer from "@/app/components/footer";
+import Navbar from "@/app/components/NavBar";
+import TopPost from "@/app/components/TopPost";
+import BlogPost from "@/app/components/TopPost";
+import PostCard from "@/app/components/Postcard";
 import { IBlog, fetchBlogs } from "@/repository/blog";
+
 
 const Page = () => {
   const [blogPosts, setBlogPosts] = React.useState<IBlog[] | null>(null);
@@ -38,10 +40,7 @@ const Page = () => {
             />
           </div>
 
-          <div
-            className="hidden lg:flex flex-col   gap-3"
-            style={{ width: "22rem" }}
-          >
+          <div className="hidden lg:flex flex-col gap-3" style={{ width: "22rem" }}>
             <TopPost
               image={Blog1}
               title="Top"
@@ -64,67 +63,13 @@ const Page = () => {
           {blogPosts?.map((item, index) => (
             <PostCard
               key={index}
-              image={Blog2}
+              image={item.image}
               title={item.title}
-              route={`/blog/${item._id}`}
-              description={item.description}
+              summary={item.summary}
+              dateCreated={item.createdAt}
+              route={`/blog/${item.slug}`}
             />
           ))}
-
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
-          <PostCard
-            image={Blog2}
-            title="card"
-            route="/blog/1"
-            description="post cards"
-          />
         </div>
       </div>
 
